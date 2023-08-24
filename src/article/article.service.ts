@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Article } from './article.interface';
 const URL = 'http://localhost:3030/article/';
 
-
+@Injectable()
 export class ArticleService {
   async getArticles(): Promise<Article[]> {
     const res = await fetch(URL);

@@ -7,7 +7,8 @@
       "email": "john@example.com",
       "password": "password",
       "userType": 1,
-      "createdAt": "2023-08-17T15:30:00Z"
+      "createdAt": "2023-08-17T15:30:00Z",
+      "updatedAt": ""
 
     },
     {
@@ -17,7 +18,8 @@
       "email": "jane@example.com",
       "password": "password",
       "userType": 2,
-      "createdAt": "2023-08-17T15:31:00Z"
+      "createdAt": "2023-08-17T15:31:00Z",
+      "updatedAt": ""
     }
   ],
   "Recipe": [

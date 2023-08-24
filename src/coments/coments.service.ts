@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Coments } from './coments.interface';
-import fetch from 'node-fetch'; // 
-
+import fetch from 'node-fetch';
 const URL = 'http://localhost:3030/coments/';
 
 @Injectable()

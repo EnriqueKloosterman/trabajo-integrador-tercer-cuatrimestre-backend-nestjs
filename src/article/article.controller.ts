@@ -3,7 +3,7 @@ import { Article } from './article.interface';
 import { ArticleService } from './article.service';
 
 @Controller('articles')
-export class articleController {
+export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}
   
   @Get()
@@ -19,10 +19,3 @@ export class articleController {
     return this.articleService.createArticle(article);
   }
 }
- 
-
-  
-
-
-
-

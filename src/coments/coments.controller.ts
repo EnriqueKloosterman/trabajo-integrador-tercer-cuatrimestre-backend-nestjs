@@ -3,9 +3,8 @@ import { Coments } from './coments.interface';
 import { ComentsService } from './coments.service';
 
 @Controller('coments')
-export class comentsController {
+export class ComentsController {
   constructor(private readonly comentsService: ComentsService) {}
-  
   @Get()
   getComents(): Promise<Coments[]> {
     return this.comentsService.getComents();
@@ -19,4 +18,3 @@ export class comentsController {
     return this.comentsService.createComents(coments);
   }
 }
- 
