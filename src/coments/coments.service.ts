@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Coments } from './coments.interface'; // Asegúrate de tener la interfaz correcta importada
-import fetch from 'node-fetch'; // Importa la librería de fetch
+import { Coments } from './coments.interface';
+import fetch from 'node-fetch'; // 
 
 const URL = 'http://localhost:3030/coments/';
 
