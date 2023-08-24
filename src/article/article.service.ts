@@ -1,4 +1,6 @@
 import { Injectable } from '@nestjs/common';
+import { Article } from './article.interface';
+const URL = 'http://localhost:3030/users/';
 
 
 export class ArticleService {
@@ -14,7 +16,7 @@ export class ArticleService {
   }
   async createArticle(article: Article): Promise<Article> {
     const id = await this.createId();
-    const articleId = { id, ...Article };
+    const articleId = { id, ...article };
     const res = await fetch(URL, {
       method: 'POST',
       body: JSON.stringify(articleId),
