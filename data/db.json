@@ -1,94 +1,58 @@
 {
-    "Users": [
-        {
-            "id": 1,
-            "name": "John",
-            "lastName": "Doe",
-            "email": "john@example.com",
-            "address": "123 Main St, City",
-            "password": "securepass1",
-            "tel": "123-456-7890"
-        },
-        {
-            "id": 2,
-            "name": "Jane",
-            "lastName": "Smith",
-            "email": "jane@example.com",
-            "address": "456 Elm St, Town",
-            "password": "securepass2",
-            "tel": "987-654-3210"
-        },
-        {
-            "id": 3,
-            "name": "Michael",
-            "lastName": "Johnson",
-            "email": "michael@example.com",
-            "address": "789 Oak St, Village",
-            "password": "securepass3",
-            "tel": "555-123-4567"
-        },
-        {
-            "id": 4,
-            "name": "Emily",
-            "lastName": "Brown",
-            "email": "emily@example.com",
-            "address": "321 Pine St, Hamlet",
-            "password": "securepass4",
-            "tel": "111-222-3333"
-        },
-        {
-            "id": 5,
-            "name": "William",
-            "lastName": "Davis",
-            "email": "william@example.com",
-            "address": "654 Birch St, Suburb",
-            "password": "securepass5",
-            "tel": "444-555-6666"
-        },
-        {
-            "id": 6,
-            "name": "Olivia",
-            "lastName": "Wilson",
-            "email": "olivia@example.com",
-            "address": "987 Maple St, Countryside",
-            "password": "securepass6",
-            "tel": "777-888-9999"
-        },
-        {
-            "id": 7,
-            "name": "James",
-            "lastName": "Taylor",
-            "email": "james@example.com",
-            "address": "222 Oak St, Beach",
-            "password": "securepass7",
-            "tel": "222-333-4444"
-        },
-        {
-            "id": 8,
-            "name": "Sophia",
-            "lastName": "White",
-            "email": "sophia@example.com",
-            "address": "555 Elm St, Mountains",
-            "password": "securepass8",
-            "tel": "888-999-0000"
-        },
-        {
-            "id": 9,
-            "name": "Benjamin",
-            "lastName": "Harris",
-            "email": "benjamin@example.com",
-            "address": "888 Birch St, Desert",
-            "password": "securepass9",
-            "tel": "123-456-7890"
-        },
-        {
-            "id": 10,
-            "name": "Ava",
-            "lastName": "Martinez",
-            "email": "ava@example.com",
-            "address": "444 Maple St, Forest",
-            "password": "securepass10",
-            "tel": "555-555-5555"
-        }
-    ]
+  "Users": [
+    {
+      "id": 1,
+      "name": "John",
+      "lastName": "Doe",
+      "email": "john@example.com",
+      "password": "password",
+      "userType": 1,
+      "createdAt": "2023-08-17T15:30:00Z"
+
+    },
+    {
+      "id": 2,
+      "name": "Jane",
+      "lastName": "Smith",
+      "email": "jane@example.com",
+      "password": "password",
+      "userType": 2,
+      "createdAt": "2023-08-17T15:31:00Z"
+    }
+  ],
+  "Recipe": [
+    {
+      "id": 1,
+      "title": "Titulo de la receta",
+      "recipe": "Intrucciones de la receta",
+      "ingredients": "Ingredientes",
+      "img": "url la imagen",
+      "user_id": 1,
+      "createdAt": "2023-08-17T15:32:00Z",
+      "updatedAt": "2023-08-17T15:32:00Z"
+
+    }
+  ],
+  "Coments": [
+    {
+      "id": 1,
+      "coment": "Comentario",
+      "img": "imgen",
+      "recipe_id": 1,
+      "user_ id": 2,
+      "createdAt": "2023-08-17T15:33:00Z",
+      "updatedAt": ""
+    }
+  ],
+  "Article": [
+    {
+      "id": 1,
+      "title": "Titulo del articulo",
+      "article": "texto del articlo",
+      "img": "imagen",
+      "user_id":1,
+      "createdAt": "2023-08-17T15:34:00Z",
+      "updatedAt": ""
+    }
+  ]
 }
