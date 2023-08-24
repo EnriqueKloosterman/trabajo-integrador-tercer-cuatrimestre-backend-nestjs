@@ -1,4 +1,3 @@
-
 import { Controller, Get, Param, Post, Body } from '@nestjs/common';
 import { Article } from './article.interface';
 import { ArticleService } from './article.service';
