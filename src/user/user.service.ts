@@ -27,6 +27,25 @@ export class UserService {
     const parsed = await res.json();
     return parsed;
   }
+  async updateUser(id: number, user: User): Promise<User> {
+    const isUser = await this.getUserById(id);
+    if (!Object.keys(isUser).length) return;
+    const updateUser = { id, ...user };
+    await fetch(`${URL}${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updateUser),
+    });
+  }
+  async deleteUser(id: number): Promise<User> {
+    const res = await fetch(`${URL}${id}`, {
+      method: 'DELETE',
+    });
+    const parsed = await res.json();
+    return parsed;
+  }
   async createId(): Promise<number> {
     const res = await this.getUsers();
     const lastUser = res[res.length - 1];
