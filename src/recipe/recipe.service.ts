@@ -27,6 +27,25 @@ export class RecipeService {
     const parsed = await res.json();
     return parsed;
   }
+  async deleteRecipe(id: number): Promise<Recipe> {
+    const res = await fetch(`${recipeURL}/${id}`, {
+      method: 'DELETE',
+    });
+    const parsed = await res.json();
+    return parsed;
+  }
+  async updateRecipe(id: number, Recipe: Recipe): Promise<Recipe> {
+    const isRecipe = await this.getRecipeById(id);
+    if(!Object.keys(isRecipe).length) return;
+    const updateRecipe = {id, ...Recipe};
+    await fetch(`${recipeURL}/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updateRecipe),
+    });
+  }
   async createId(): Promise<number> {
     const res = await this.getAllRecipes();
     const lastRecipe = res[res.length - 1];

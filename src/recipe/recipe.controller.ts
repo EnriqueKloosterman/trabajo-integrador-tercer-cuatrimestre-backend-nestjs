@@ -1,4 +1,13 @@
-import { Controller, Get, Param, Post, Body } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Post,
+  Body,
+  Delete,
+  Put,
+  HttpCode,
+} from '@nestjs/common';
 import { RecipeService } from './recipe.service';
 import { Recipe } from './recipe.interface';
 
@@ -17,5 +26,13 @@ export class RecipeController {
   createRecipe(@Body() recipe: Recipe): Promise<Recipe> {
     return this.recipeService.createRecipe(recipe);
   }
+  @Delete('/:id')
+  deleteRecipe(@Param('id') id: number): any {
+    return this.recipeService.deleteRecipe(id);
+  }
+  @Put('/:id')
+  @HttpCode(204)
+  updateRecipe(@Param('id') id: number, @Body() body): Promise<Recipe> {
+    return this.recipeService.updateRecipe(id, body);
+  }
 }
-

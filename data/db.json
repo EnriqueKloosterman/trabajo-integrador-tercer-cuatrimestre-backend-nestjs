@@ -42,8 +42,8 @@
     },
     {
       "id": 5,
-      "namme": "Franco",
-      "lastName": "Castillo",
+      "namme": "Frank",
+      "lastName": "Castle",
       "email": "punisher@mail.com",
       "userType": 2,
       "password": "password",
@@ -95,7 +95,7 @@
     },
     {
       "id": 3,
-      "title": "Receta N3",
+      "title": "Receta N3 editada",
       "recipe": [
         "Pon una cazuela con agua a fuego medio y, cuando esté hirviendo, añade los macarrones y cocínalos hasta que estén un poco al dente, ya que luego se calentarán con la carne. Cuando estén cocidos escúrrelos y resérvalos.",
         "Corta la carne en rodajas de 1 cm de grosor y salpimienta al gusto. Puedes hacer esta receta de lomo al pepe con lomo o con solomillo si lo prefieres.",
