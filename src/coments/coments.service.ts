@@ -11,7 +11,7 @@ export class ComentsService {
   }
 
   async getComentsById(id: number): Promise<Coments> {
-    const res = await fetch(`${URL}${id}`);
+    const res = await fetch(`${comentsURL}${id}`);
     const parsed = await res.json();
     return parsed;
   }
@@ -31,29 +31,24 @@ export class ComentsService {
   }
 
   async deleteComents(id: number): Promise<Coments> {
-    const res = await fetch(`${URL}${id}`, {
+    const res = await fetch(`${comentsURL}${id}`, {
       method: 'DELETE',
     });
     const parsed = await res.json();
     return parsed;
   }
 
-  async updateComents(id: number, updatedComents: Coments): Promise<Coments> {
+  async updateComents(id: number, Coments: Coments): Promise<Coments> {
     const existingComents = await this.getComentsById(id);
-    if (!existingComents) {
-      return null; 
-    }
-    
-    const updateComents = { id, ...updatedComents };
-    await fetch(`${URL}${id}`, {
+    if(!Object.keys(existingComents).length) return;
+    const updateComent = {id, ...Coments};
+    await fetch(`${comentsURL}/${id}` ,{
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(updateComents),
-    });
-
-    return updateComents;
+      body: JSON.stringify(updateComent)
+    })
   }
 
   async createId(): Promise<number> {

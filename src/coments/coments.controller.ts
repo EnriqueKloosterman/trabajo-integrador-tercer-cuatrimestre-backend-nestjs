@@ -53,7 +53,6 @@ export class ComentsController {
   }
 
   @Put('/:id')
-  @HttpCode(204)
   async updateComents(@Param('id') id: number, @Body() body: Coments, @Res() res: Response): Promise<any> {
     try {
       await this.comentsService.updateComents(id, body);
@@ -61,5 +60,6 @@ export class ComentsController {
     } catch (error) {
       throw new BadRequestException(`Coments with id ${id} not found.`);
     }
+    // return this.comentsService.updateComents(id, body);
   }
 }

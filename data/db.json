@@ -59,6 +59,16 @@
       "password": "password",
       "createdAt": "2023-08-30",
       "updatedAt": ""
+    },
+    {
+      "id": 7,
+      "namme": "Frank 3",
+      "lastName": "Castle",
+      "email": "punisher@mail.com",
+      "userType": 2,
+      "password": "password",
+      "createdAt": "2023-08-30",
+      "updatedAt": ""
     }
   ],
   "Recipe": [
@@ -144,6 +154,24 @@
       "user_ id": 2,
       "createdAt": "2023-08-17T15:33:00Z",
       "updatedAt": ""
+    },
+    {
+      "id": 2,
+      "coment": "Comentario 2",
+      "img": "imgen",
+      "recipe_id": 1,
+      "user_ id": 6,
+      "createdAt": "2023-08-17T15:33:00Z",
+      "updatedAt": ""
+    },
+    {
+      "id": 3,
+      "coment": "Comentario 3",
+      "img": "imgen",
+      "recipe_id": 1,
+      "user_ id": 6,
+      "createdAt": "2023-08-17T15:33:00Z",
+      "updatedAt": ""
     }
   ],
   "Article": [
@@ -151,6 +179,24 @@
       "id": 1,
       "title": "Titulo del articulo",
       "article": "texto del articlo",
+      "img": "imagen",
+      "user_id": 1,
+      "createdAt": "2023-08-17T15:34:00Z",
+      "updatedAt": ""
+    },
+    {
+      "id": 2,
+      "title": "Titulo del articulo 2",
+      "article": "texto del articlo 2",
+      "img": "imagen",
+      "user_id": 1,
+      "createdAt": "2023-08-17T15:34:00Z",
+      "updatedAt": ""
+    },
+    {
+      "id": 3,
+      "title": "Titulo del articulo 3",
+      "article": "texto del articlo 3",
       "img": "imagen",
       "user_id": 1,
       "createdAt": "2023-08-17T15:34:00Z",

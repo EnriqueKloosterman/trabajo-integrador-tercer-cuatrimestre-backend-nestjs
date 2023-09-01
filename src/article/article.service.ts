@@ -11,7 +11,7 @@ export class ArticleService {
   }
 
   async getArticleById(id: number): Promise<Article> {
-    const res = await fetch(`${URL}${id}`);
+    const res = await fetch(`${articleURL}${id}`);
     const parsed = await res.json();
     return parsed;
   }
@@ -31,7 +31,7 @@ export class ArticleService {
   }
 
   async deleteArticle(id: number): Promise<Article> {
-    const res = await fetch(`${URL}${id}`, {
+    const res = await fetch(`${articleURL}${id}`, {
       method: 'DELETE',
     });
     const parsed = await res.json();
@@ -45,7 +45,7 @@ export class ArticleService {
     }
     
     const articleToUpdate = { id, ...updatedArticle };
-    await fetch(`${URL}${id}`, {
+    await fetch(`${articleURL}${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
