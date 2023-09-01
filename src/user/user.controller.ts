@@ -49,7 +49,7 @@ export class UserController {
       const serviceResponse = await this.userService.createUser(user);
       await res.status(HttpStatus.CREATED).send(serviceResponse);
     } catch (error) {
-      throw new BadRequestException(`User creation has failed`);
+      throw new BadRequestException(`User creation failed`);
     }
   }
   @Delete('/:id')
