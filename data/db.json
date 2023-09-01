@@ -49,6 +49,16 @@
       "password": "password",
       "createdAt": "2023-08-30",
       "updatedAt": ""
+    },
+    {
+      "id": 6,
+      "namme": "Jesse",
+      "lastName": "Custer",
+      "email": "preacher@mail.com",
+      "userType": 1,
+      "password": "password",
+      "createdAt": "2023-08-30",
+      "updatedAt": ""
     }
   ],
   "Recipe": [
