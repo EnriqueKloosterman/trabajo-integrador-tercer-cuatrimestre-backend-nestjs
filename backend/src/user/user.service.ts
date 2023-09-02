@@ -22,9 +22,8 @@ export class UserService {
   async createUser(user: User): Promise<User> {
     const id = await this.createId();
     const userId = { id, ...user };
-    const timeStammp = new Date();
-    userId.createdAt = timeStammp;
-    userId.updatedAt = timeStammp;
+    userId.createdAt = new Date(); 
+    userId.updatedAt = new Date(); 
     const res = await fetch(URL, {
       method: 'POST',
       body: JSON.stringify(userId),
@@ -39,8 +38,7 @@ export class UserService {
     const isUser = await this.getUserById(id);
     if (!Object.keys(isUser).length) return;
     const updateUser = { id, ...user };
-    const now = new Date();
-    updateUser.updatedAt = now;
+    updateUser.updatedAt = new Date();
     await fetch(`${URL}${id}`, {
       method: 'PUT',
       headers: {
