@@ -22,12 +22,12 @@
     },
     {
       "id": 3,
-      "name": "John",
-      "lastName": "Doe",
-      "email": "john@example.com",
-      "password": "password",
+      "name": "Wayne",
+      "lastName": "Gretzky",
+      "email": "greatone@mail.com",
       "userType": 1,
-      "createdAt": "2023-08-17T15:30:00Z",
+      "password": "password",
+      "createdAt": "2023-08-30",
       "updatedAt": ""
     },
     {
@@ -48,11 +48,11 @@
       "userType": 2,
       "password": "password",
       "createdAt": "2023-08-30",
-      "updatedAt": ""
+      "updatedAt": "2023-09-02T12:36:55.955Z"
     },
     {
       "id": 6,
-      "namme": "Jesse",
+      "name": "Jesse",
       "lastName": "Custer",
       "email": "preacher@mail.com",
       "userType": 1,
@@ -62,13 +62,23 @@
     },
     {
       "id": 7,
-      "namme": "Frank 3",
-      "lastName": "Castle",
-      "email": "punisher@mail.com",
-      "userType": 2,
+      "name": "Wade",
+      "lastName": "Wilson",
+      "email": "mrpool@mail.com",
+      "userType": 1,
       "password": "password",
       "createdAt": "2023-08-30",
       "updatedAt": ""
+    },
+    {
+      "id": 8,
+      "namme": "Pepe",
+      "lastName": "Sanchez",
+      "email": "mail@mail.com",
+      "userType": 2,
+      "password": "password",
+      "createdAt": "2023-09-02T12:34:50.311Z",
+      "updatedAt": "2023-09-02T12:34:50.311Z"
     }
   ],
   "Recipe": [

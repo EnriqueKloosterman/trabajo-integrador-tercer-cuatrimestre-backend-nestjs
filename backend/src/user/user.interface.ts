@@ -5,6 +5,6 @@ export interface User {
   email: string;
   password: string;
   userType: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
 }

@@ -7,7 +7,12 @@ export class UserService {
   async getUsers(): Promise<User[]> {
     const res = await fetch(URL);
     const parsed = await res.json();
-    return parsed;
+    const showUser = parsed.map((user: User) => ({
+      name: user.name,
+      lastName: user.lastName,
+      email: user.email,
+    }));
+    return showUser;
   }
   async getUserById(id: number): Promise<User> {
     const res = await fetch(`${URL}${id}`);
@@ -17,6 +22,9 @@ export class UserService {
   async createUser(user: User): Promise<User> {
     const id = await this.createId();
     const userId = { id, ...user };
+    const timeStammp = new Date();
+    userId.createdAt = timeStammp;
+    userId.updatedAt = timeStammp;
     const res = await fetch(URL, {
       method: 'POST',
       body: JSON.stringify(userId),
@@ -31,6 +39,8 @@ export class UserService {
     const isUser = await this.getUserById(id);
     if (!Object.keys(isUser).length) return;
     const updateUser = { id, ...user };
+    const now = new Date();
+    updateUser.updatedAt = now;
     await fetch(`${URL}${id}`, {
       method: 'PUT',
       headers: {
