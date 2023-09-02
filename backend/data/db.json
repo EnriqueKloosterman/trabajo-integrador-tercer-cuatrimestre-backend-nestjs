@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "namme": "Frank",
+      "name": "Frank",
       "lastName": "Castle",
       "email": "punisher@mail.com",
       "userType": 2,
@@ -55,10 +55,9 @@
       "name": "Jesse",
       "lastName": "Custer",
       "email": "preacher@mail.com",
-      "userType": 1,
+      "userType": 2,
       "password": "password",
-      "createdAt": "2023-08-30",
-      "updatedAt": ""
+      "updatedAt": "2023-09-02T12:46:23.359Z"
     },
     {
       "id": 7,
@@ -72,7 +71,7 @@
     },
     {
       "id": 8,
-      "namme": "Pepe",
+      "name": "Pepe",
       "lastName": "Sanchez",
       "email": "mail@mail.com",
       "userType": 2,
