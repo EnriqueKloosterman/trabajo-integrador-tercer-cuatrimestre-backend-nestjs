@@ -17,6 +17,8 @@ export class RecipeService {
   async createRecipe(recipe: Recipe): Promise<Recipe> {
     const id = await this.createId();
     const recipeWithId = { id, ...recipe };
+    recipeWithId.createdAt = new Date();
+    recipeWithId.updatedAt = new Date();
     const res = await fetch(recipeURL, {
       method: 'POST',
       body: JSON.stringify(recipeWithId),
@@ -38,6 +40,7 @@ export class RecipeService {
     const isRecipe = await this.getRecipeById(id);
     if(!Object.keys(isRecipe).length) return;
     const updateRecipe = {id, ...Recipe};
+    updateRecipe.updatedAt = new Date();
     await fetch(`${recipeURL}/${id}`, {
       method: 'PUT',
       headers: {

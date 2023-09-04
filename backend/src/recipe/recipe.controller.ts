@@ -53,13 +53,22 @@ export class RecipeController {
     }
   }
   @Delete('/:id')
-  @HttpCode(204)
-  deleteRecipe(@Param('id') id: number): any {
-    return this.recipeService.deleteRecipe(id);
+  async deleteRecipe(@Param('id') id: number, @Res() res: Response): Promise<any> {
+   try{
+    const serviceResponse = await this.recipeService.deleteRecipe(id);
+    res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+   }catch(error){
+    throw new BadRequestException('Recipe deletion failed')
+   }
   }
   @Put('/:id')
-  @HttpCode(204)
-  updateRecipe(@Param('id') id: number, @Body() body): Promise<Recipe> {
-    return this.recipeService.updateRecipe(id, body);
+  async updateRecipe(@Param('id') id: number, @Body() body, @Res() res: Response): Promise<any> {
+    try {
+      const serviceResponse = await this.recipeService.updateRecipe(id, body);
+      res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+    } catch (error) {
+      throw new BadRequestException('Recipe update failed')
+    }
+    // return this.recipeService.updateRecipe(id, body);
   }
 }

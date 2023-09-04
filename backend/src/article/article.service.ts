@@ -19,6 +19,8 @@ export class ArticleService {
   async createArticle(article: Article): Promise<Article> {
     const id = await this.createId();
     const articleWithId = { id, ...article };
+    articleWithId.createdAt = new Date();
+    articleWithId.updatedAt = new Date();
     const res = await fetch(articleURL, {
       method: 'POST',
       body: JSON.stringify(articleWithId),
@@ -45,6 +47,7 @@ export class ArticleService {
     }
     
     const articleToUpdate = { id, ...updatedArticle };
+    articleToUpdate.updatedAt = new Date();
     await fetch(`${articleURL}${id}`, {
       method: 'PUT',
       headers: {

@@ -6,7 +6,6 @@ import {
   Body,
   Delete,
   Put,
-  HttpCode,
   Res,
   HttpStatus,
   BadRequestException,
@@ -47,19 +46,34 @@ export class UserController {
   async createUser(@Body() user: User, @Res() res: Response): Promise<any> {
     try {
       const serviceResponse = await this.userService.createUser(user);
-      await res.status(HttpStatus.CREATED).send(serviceResponse);
+      res.status(HttpStatus.CREATED).send(serviceResponse);
     } catch (error) {
       throw new BadRequestException(`User creation failed`);
     }
   }
   @Delete('/:id')
-  @HttpCode(204)
-  deleteUser(@Param('id') id: number): any {
-    return this.userService.deleteUser(id);
+  async deleteUser(
+    @Param('id') id: number,
+    @Res() res: Response,
+  ): Promise<any> {
+    try {
+      const serviceResponse = await this.userService.deleteUser(id);
+      res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+    } catch (error) {
+      throw new BadRequestException(`User with id ${id} not found`);
+    }
   }
   @Put('/:id')
-  @HttpCode(204)
-  updateUser(@Param('id') id: number, @Body() body): Promise<User> {
-    return this.userService.updateUser(id, body);
+  async updateUser(
+    @Param('id') id: number,
+    @Body() body,
+    @Res() res: Response,
+  ): Promise<any> {
+    try {
+      const serviceResponse = await this.userService.updateUser(id, body);
+      res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+    } catch (error) {
+      throw new BadRequestException(`User update failed`);
+    }
   }
 }

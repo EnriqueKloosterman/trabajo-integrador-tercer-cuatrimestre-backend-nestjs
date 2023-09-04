@@ -52,12 +52,12 @@
     },
     {
       "id": 6,
-      "name": "Jesse",
+      "name": "Jesse E",
       "lastName": "Custer",
       "email": "preacher@mail.com",
-      "userType": 2,
+      "userType": 1,
       "password": "password",
-      "updatedAt": "2023-09-02T12:46:23.359Z"
+      "updatedAt": "2023-09-02T20:14:40.080Z"
     },
     {
       "id": 7,
@@ -88,16 +88,6 @@
       "password": "password",
       "createdAt": "2023-09-02T13:21:34.603Z",
       "updatedAt": "2023-09-02T13:21:34.603Z"
-    },
-    {
-      "id": 10,
-      "name": "Sarah",
-      "lastName": "Pezzini",
-      "email": "blade@mail.com",
-      "userType": 2,
-      "password": "password",
-      "createdAt": "2023-09-02T13:23:23.813Z",
-      "updatedAt": "2023-09-02T13:23:23.813Z"
     }
   ],
   "Recipe": [
@@ -144,7 +134,7 @@
     },
     {
       "id": 3,
-      "title": "Receta N3 editada",
+      "title": "Receta N3  re editada",
       "recipe": [
         "Pon una cazuela con agua a fuego medio y, cuando esté hirviendo, añade los macarrones y cocínalos hasta que estén un poco al dente, ya que luego se calentarán con la carne. Cuando estén cocidos escúrrelos y resérvalos.",
         "Corta la carne en rodajas de 1 cm de grosor y salpimienta al gusto. Puedes hacer esta receta de lomo al pepe con lomo o con solomillo si lo prefieres.",
@@ -171,7 +161,7 @@
       "img": "https://cdn0.recetasgratis.net/es/posts/3/6/3/lomo_al_pepe_74363_600.webp",
       "userId": 1,
       "createdAt": "25/08/2023",
-      "updatedAt": ""
+      "updatedAt": "2023-09-04T12:45:43.762Z"
     }
   ],
   "Coments": [
@@ -196,11 +186,11 @@
     {
       "id": 3,
       "coment": "Comentario 3",
-      "img": "imgen",
+      "img": "",
       "recipe_id": 1,
       "user_ id": 6,
       "createdAt": "2023-08-17T15:33:00Z",
-      "updatedAt": ""
+      "updatedAt": "2023-09-04T12:47:37.435Z"
     }
   ],
   "Article": [
@@ -224,12 +214,12 @@
     },
     {
       "id": 3,
-      "title": "Titulo del articulo 3",
-      "article": "texto del articlo 3",
+      "title": "Titulo del articulo 3 editado",
+      "article": "texto del articlo 3 editado",
       "img": "imagen",
       "user_id": 1,
       "createdAt": "2023-08-17T15:34:00Z",
-      "updatedAt": ""
+      "updatedAt": "2023-09-04T12:49:03.400Z"
     }
   ]
 }

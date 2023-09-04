@@ -19,6 +19,8 @@ export class ComentsService {
   async createComents(coments: Coments): Promise<Coments> {
     const id = await this.createId();
     const comentsWithId = { id, ...coments };
+    comentsWithId.createdAt = new Date();
+    comentsWithId.updatedAt = new Date();
     const res = await fetch(comentsURL, {
       method: 'POST',
       body: JSON.stringify(comentsWithId),
@@ -42,6 +44,7 @@ export class ComentsService {
     const existingComents = await this.getComentsById(id);
     if(!Object.keys(existingComents).length) return;
     const updateComent = {id, ...Coments};
+    updateComent.updatedAt = new Date();
     await fetch(`${comentsURL}/${id}` ,{
       method: 'PUT',
       headers: {
