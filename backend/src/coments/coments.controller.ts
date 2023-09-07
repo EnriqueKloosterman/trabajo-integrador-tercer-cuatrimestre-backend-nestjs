@@ -1,7 +1,20 @@
-import { Controller, Get, Param, Post, Body, Delete, Put, HttpCode, Res, HttpStatus, BadRequestException } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Post,
+  Body,
+  Delete,
+  Put,
+  HttpCode,
+  Res,
+  HttpStatus,
+  BadRequestException,
+} from '@nestjs/common';
 import { Coments } from './coments.interface';
 import { ComentsService } from './coments.service';
 import { Response } from 'express';
+import { CreateComentsDto } from './coments.dto';
 
 @Controller('coments')
 export class ComentsController {
@@ -18,13 +31,18 @@ export class ComentsController {
   }
 
   @Get(':id')
-  async getComentsById(@Param('id') id: number, @Res() res: Response): Promise<any> {
+  async getComentsById(
+    @Param('id') id: number,
+    @Res() res: Response,
+  ): Promise<any> {
     try {
       const coments = await this.comentsService.getComentsById(id);
       if (coments) {
         return res.status(HttpStatus.OK).json(coments);
       } else {
-        return res.status(HttpStatus.NOT_FOUND).json({ message: 'Coments not found' });
+        return res
+          .status(HttpStatus.NOT_FOUND)
+          .json({ message: 'Coments not found' });
       }
     } catch (error) {
       throw new BadRequestException(`Coments with id ${id} not found.`);
@@ -32,18 +50,20 @@ export class ComentsController {
   }
 
   @Post()
-  async createComents(@Body() coments: Coments, @Res() res: Response): Promise<any> {
-    try {
-      const createdComents = await this.comentsService.createComents(coments);
+  async createComents (
+    @Body() createdComentsDto: CreateComentsDto,
+    @Res() res: Response,
+  ): Promise<any> {
+      const createdComents = await this.comentsService.createComents(CreateComentsDto);
       return res.status(HttpStatus.CREATED).json(createdComents);
-    } catch (error) {
-      throw new BadRequestException('Coments creation failed');
-    }
   }
 
   @Delete('/:id')
   @HttpCode(204)
-  async deleteComents(@Param('id') id: number, @Res() res: Response): Promise<any> {
+  async deleteComents(
+    @Param('id') id: number,
+    @Res() res: Response,
+  ): Promise<any> {
     try {
       await this.comentsService.deleteComents(id);
       return res.sendStatus(HttpStatus.NO_CONTENT);
@@ -53,7 +73,11 @@ export class ComentsController {
   }
 
   @Put('/:id')
-  async updateComents(@Param('id') id: number, @Body() body: Coments, @Res() res: Response): Promise<any> {
+  async updateComents(
+    @Param('id') id: number,
+    @Body() body: Coments,
+    @Res() res: Response,
+  ): Promise<any> {
     try {
       await this.comentsService.updateComents(id, body);
       return res.sendStatus(HttpStatus.NO_CONTENT);

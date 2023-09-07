@@ -17,20 +17,13 @@ export class CreateArticleDto {
   img: string
 
 
-
   // Añadimos los decoradores IsNumber y IsDate para las nuevas propiedades
   @Expose()
   @IsNumber()
   @IsNotEmpty()
   user_id: number;
 
-  // @Expose()
-  // @IsDate()
-  // @IsNotEmpty()
   createdAt: Date;
 
-  // @Expose()
-  // @IsDate()
-  // @IsNotEmpty()
   updatedAt: Date;
 }
