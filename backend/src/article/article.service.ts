@@ -1,22 +1,23 @@
 import { Injectable } from '@nestjs/common';
-import { Article } from './article.interface';
+// import { Article } from './article.interface';
+import { CreateArticleDto } from './create-article.dto';
 const articleURL = 'http://localhost:3030/article/';
 
 @Injectable()
 export class ArticleService {
-  async getArticles(): Promise<Article[]> {
+  async getArticles(): Promise<any> {
     const res = await fetch(articleURL);
     const parsed = await res.json();
     return parsed;
   }
 
-  async getArticleById(id: number): Promise<Article> {
+  async getArticleById(id: number): Promise<any> {
     const res = await fetch(`${articleURL}${id}`);
     const parsed = await res.json();
     return parsed;
   }
 
-  async createArticle(article: Article): Promise<Article> {
+  async createArticle(article: CreateArticleDto): Promise<any> {
     const id = await this.createId();
     const articleWithId = { id, ...article };
     articleWithId.createdAt = new Date();
@@ -32,7 +33,7 @@ export class ArticleService {
     return parsed;
   }
 
-  async deleteArticle(id: number): Promise<Article> {
+  async deleteArticle(id: number): Promise<any> {
     const res = await fetch(`${articleURL}${id}`, {
       method: 'DELETE',
     });
@@ -40,7 +41,7 @@ export class ArticleService {
     return parsed;
   }
 
-  async updateArticle(id: number, updatedArticle: Article): Promise<Article> {
+  async updateArticle(id: number, updatedArticle: CreateArticleDto): Promise<any> {
     const existingArticle = await this.getArticleById(id);
     if (!existingArticle) {
       return null;

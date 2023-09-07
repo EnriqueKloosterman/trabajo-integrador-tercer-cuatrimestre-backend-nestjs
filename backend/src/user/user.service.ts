@@ -1,25 +1,26 @@
 import { Injectable } from '@nestjs/common';
-import { User } from './user.interface';
+// import { User } from './user.interface';
+import { UsersDto } from './user.dto';
 const URL = 'http://localhost:3030/users/';
 
 @Injectable()
 export class UserService {
-  async getUsers(): Promise<User[]> {
+  async getUsers(): Promise<any> {
     const res = await fetch(URL);
     const parsed = await res.json();
-    const showUser = parsed.map((user: User) => ({
+    const showUser = parsed.map((user: UsersDto) => ({
       name: user.name,
       lastName: user.lastName,
       email: user.email,
     }));
     return showUser;
   }
-  async getUserById(id: number): Promise<User> {
+  async getUserById(id: number): Promise<any> {
     const res = await fetch(`${URL}${id}`);
     const parsed = await res.json();
     return parsed;
   }
-  async createUser(user: User): Promise<User> {
+  async createUser(user: UsersDto): Promise<any> {
     const id = await this.createId();
     const userId = { id, ...user };
     userId.createdAt = new Date(); 
@@ -34,7 +35,7 @@ export class UserService {
     const parsed = await res.json();
     return parsed;
   }
-  async updateUser(id: number, user: User): Promise<User> {
+  async updateUser(id: number, user: UsersDto): Promise<any> {
     const isUser = await this.getUserById(id);
     if (!Object.keys(isUser).length) return;
     const updateUser = { id, ...user };
@@ -47,7 +48,7 @@ export class UserService {
       body: JSON.stringify(updateUser),
     });
   }
-  async deleteUser(id: number): Promise<User> {
+  async deleteUser(id: number): Promise<any> {
     const res = await fetch(`${URL}${id}`, {
       method: 'DELETE',
     });

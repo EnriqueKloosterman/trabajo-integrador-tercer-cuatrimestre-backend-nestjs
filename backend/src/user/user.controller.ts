@@ -11,7 +11,8 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { UserService } from './user.service';
-import { User } from './user.interface';
+// import { User } from './user.interface';
+import { UsersDto } from './user.dto';
 import { Response } from 'express';
 
 @Controller('users')
@@ -43,7 +44,7 @@ export class UserController {
     }
   }
   @Post()
-  async createUser(@Body() user: User, @Res() res: Response): Promise<any> {
+  async createUser(@Body() user: UsersDto, @Res() res: Response): Promise<any> {
     try {
       const serviceResponse = await this.userService.createUser(user);
       res.status(HttpStatus.CREATED).send(serviceResponse);

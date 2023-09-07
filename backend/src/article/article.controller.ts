@@ -1,8 +1,21 @@
-import { Controller, Get, Param, Post, Body, Delete, Put, HttpCode, Res, HttpStatus, HttpException } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Post,
+  Body,
+  Delete,
+  Put,
+  HttpCode,
+  Res,
+  HttpStatus,
+  HttpException,
+  BadRequestException,
+} from '@nestjs/common';
 import { Article } from './article.interface';
 import { ArticleService } from './article.service';
 import { Response } from 'express';
-import { CreateArticleDto } from './create-article.dto'; 
+import { CreateArticleDto } from './create-article.dto';
 
 @Controller('articles')
 export class ArticleController {
@@ -15,17 +28,28 @@ export class ArticleController {
   }
 
   @Get('/:id')
-  async getArticleById(@Param('id') id: number, @Res() res: Response): Promise<any> {
+  async getArticleById(
+    @Param('id') id: number,
+    @Res() res: Response,
+  ): Promise<any> {
     const article = await this.articleService.getArticleById(id);
     if (!article) {
-      throw new HttpException(`Article with id ${id} not found.`, HttpStatus.NOT_FOUND);
+      throw new HttpException(
+        `Article with id ${id} not found.`,
+        HttpStatus.NOT_FOUND,
+      );
     }
     return res.status(HttpStatus.OK).json(article);
   }
 
   @Post()
-  async createArticle(@Body() createArticleDto: CreateArticleDto, @Res() res: Response): Promise<any> {
-    const createdArticle = await this.articleService.createArticle(createArticleDto);
+  async createArticle(
+    @Body() createArticleDto: CreateArticleDto,
+    @Res() res: Response,
+  ): Promise<any> {
+    const createdArticle = await this.articleService.createArticle(
+      createArticleDto,
+    );
     return res.status(HttpStatus.CREATED).json(createdArticle);
   }
 
@@ -35,8 +59,16 @@ export class ArticleController {
   }
 
   @Put('/:id')
-  @HttpCode(204)
-  updateArticle(@Param('id') id: number, @Body() updatedArticle: Article): Promise<Article> {
-    return this.articleService.updateArticle(id, updatedArticle);
+  async updateArticle(
+    @Param('id') id: number,
+    @Body() body,
+    @Res() res: Response,
+  ): Promise<any> {
+    try {
+      const serviceResponse = await this.articleService.updateArticle(id, body);
+      res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+    } catch (error) {
+      throw new BadRequestException(`Article update failed`);
+    }
   }
 }

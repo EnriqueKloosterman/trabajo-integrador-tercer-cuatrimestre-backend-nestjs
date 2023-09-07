@@ -52,22 +52,21 @@
     },
     {
       "id": 6,
-      "name": "Jesse E",
+      "name": "Jesse P",
       "lastName": "Custer",
       "email": "preacher@mail.com",
-      "userType": 1,
+      "userType": 2,
       "password": "password",
-      "updatedAt": "2023-09-02T20:14:40.080Z"
+      "updatedAt": "2023-09-07T18:14:53.389Z"
     },
     {
       "id": 7,
-      "name": "Wade",
+      "name": "Wade P",
       "lastName": "Wilson",
-      "email": "mrpool@mail.com",
-      "userType": 1,
-      "password": "password",
-      "createdAt": "2023-08-30",
-      "updatedAt": ""
+      "email": "mrPool@mail.com",
+      "userType": 2,
+      "password": "pass1234",
+      "updatedAt": "2023-09-07T18:16:14.148Z"
     },
     {
       "id": 8,
@@ -81,13 +80,23 @@
     },
     {
       "id": 9,
-      "name": "Jackie",
-      "lastName": "Estacado",
-      "email": "darklings@mail.com",
+      "namme": "Juan",
+      "lastName": "Perz",
+      "email": "punisher@mail.com",
       "userType": 2,
       "password": "password",
-      "createdAt": "2023-09-02T13:21:34.603Z",
-      "updatedAt": "2023-09-02T13:21:34.603Z"
+      "createdAt": "2023-09-07T18:32:22.868Z",
+      "updatedAt": "2023-09-07T18:32:22.868Z"
+    },
+    {
+      "id": 10,
+      "name": "Franco",
+      "lastName": "Castillo",
+      "email": "castigador@mail.com",
+      "userType": 2,
+      "password": "password",
+      "createdAt": "2023-09-07T20:20:52.361Z",
+      "updatedAt": "2023-09-07T20:20:52.361Z"
     }
   ],
   "Recipe": [
@@ -214,12 +223,12 @@
     },
     {
       "id": 3,
-      "title": "Titulo del articulo 3 editado",
-      "article": "texto del articlo 3 editado",
+      "title": "Articulo 3",
+      "article": "texto del articlo 3",
       "img": "imagen",
       "user_id": 1,
       "createdAt": "2023-08-17T15:34:00Z",
-      "updatedAt": "2023-09-04T12:49:03.400Z"
+      "updatedAt": "2023-09-07T20:19:46.500Z"
     }
   ]
 }
