@@ -50,12 +50,14 @@ export class ComentsController {
   }
 
   @Post()
-  async createComents (
+  async createComents(
     @Body() createdComentsDto: CreateComentsDto,
     @Res() res: Response,
   ): Promise<any> {
-      const createdComents = await this.comentsService.createComents(CreateComentsDto);
-      return res.status(HttpStatus.CREATED).json(createdComents);
+    const createdComents = await this.comentsService.createComents(
+      createdComentsDto,
+    );
+    return res.status(HttpStatus.CREATED).json(createdComents);
   }
 
   @Delete('/:id')
@@ -84,6 +86,5 @@ export class ComentsController {
     } catch (error) {
       throw new BadRequestException(`Coments with id ${id} not found.`);
     }
-    // return this.comentsService.updateComents(id, body);
   }
 }

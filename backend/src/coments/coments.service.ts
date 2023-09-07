@@ -41,13 +41,15 @@ export class ComentsService {
     return parsed;
   }
 
-
-  async updateComents(id: number, updatedComents: CreateComentsDto): Promise<any> {
+  async updateComents(
+    id: number,
+    updatedComents: CreateComentsDto,
+  ): Promise<any> {
     const existingComents = await this.getComentsById(id);
     if (!existingComents) {
       return null;
     }
-    
+
     const comentsToUpdate = { id, ...updatedComents };
     comentsToUpdate.updatedAt = new Date();
     await fetch(`${comentsURL}${id}`, {
