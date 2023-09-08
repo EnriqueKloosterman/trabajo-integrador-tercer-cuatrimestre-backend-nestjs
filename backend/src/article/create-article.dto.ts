@@ -17,7 +17,6 @@ export class CreateArticleDto {
   img: string
 
 
-
   // Añadimos los decoradores IsNumber y IsDate para las nuevas propiedades
   @Expose()
   @IsNumber()

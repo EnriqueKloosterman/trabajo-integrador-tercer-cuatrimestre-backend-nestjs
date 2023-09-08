@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Coments } from './coments.interface';
 const comentsURL = 'http://localhost:3030/coments/';
+import { CreateComentsDto } from './coments.dto';
 
 @Injectable()
 export class ComentsService {
@@ -16,7 +17,7 @@ export class ComentsService {
     return parsed;
   }
 
-  async createComents(coments: Coments): Promise<Coments> {
+  async createComents(coments: CreateComentsDto): Promise<any> {
     const id = await this.createId();
     const comentsWithId = { id, ...coments };
     comentsWithId.createdAt = new Date();
@@ -40,25 +41,32 @@ export class ComentsService {
     return parsed;
   }
 
-  async updateComents(id: number, Coments: Coments): Promise<Coments> {
+  async updateComents(
+    id: number,
+    updatedComents: CreateComentsDto,
+  ): Promise<any> {
     const existingComents = await this.getComentsById(id);
-    if(!Object.keys(existingComents).length) return;
-    const updateComent = {id, ...Coments};
-    updateComent.updatedAt = new Date();
-    await fetch(`${comentsURL}/${id}` ,{
+    if (!existingComents) {
+      return null;
+    }
+
+    const comentsToUpdate = { id, ...updatedComents };
+    comentsToUpdate.updatedAt = new Date();
+    await fetch(`${comentsURL}${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(updateComent)
-    })
+      body: JSON.stringify(comentsToUpdate),
+    });
+
+    return comentsToUpdate;
   }
 
   async createId(): Promise<number> {
     const res = await this.getComents();
     const lastComent = res[res.length - 1];
-    const id = lastComent ? lastComent.id + 1 : 1; 
+    const id = lastComent ? lastComent.id + 1 : 1;
     return id;
   }
 }
-
