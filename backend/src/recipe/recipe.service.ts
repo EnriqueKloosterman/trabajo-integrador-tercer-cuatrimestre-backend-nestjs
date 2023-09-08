@@ -1,20 +1,20 @@
 import { Injectable } from '@nestjs/common';
-import { Recipe } from './recipe.interface';
+import { RecipeDto } from './recipe.dto';
 const recipeURL = 'http://localhost:3030/recipe/';
 
 @Injectable()
 export class RecipeService {
-  async getAllRecipes(): Promise<Recipe[]> {
+  async getAllRecipes(): Promise<any> {
     const res = await fetch(recipeURL);
     const parsed = await res.json();
     return parsed;
   }
-  async getRecipeById(id: number): Promise<Recipe> {
+  async getRecipeById(id: number): Promise<RecipeDto> {
     const res = await fetch(`${recipeURL}/${id}`);
     const parsed = await res.json();
     return parsed;
   }
-  async createRecipe(recipe: Recipe): Promise<Recipe> {
+  async createRecipe(recipe: RecipeDto): Promise<RecipeDto> {
     const id = await this.createId();
     const recipeWithId = { id, ...recipe };
     recipeWithId.createdAt = new Date();
@@ -29,17 +29,17 @@ export class RecipeService {
     const parsed = await res.json();
     return parsed;
   }
-  async deleteRecipe(id: number): Promise<Recipe> {
+  async deleteRecipe(id: number): Promise<RecipeDto> {
     const res = await fetch(`${recipeURL}/${id}`, {
       method: 'DELETE',
     });
     const parsed = await res.json();
     return parsed;
   }
-  async updateRecipe(id: number, Recipe: Recipe): Promise<Recipe> {
+  async updateRecipe(id: number, Recipe: RecipeDto): Promise<RecipeDto> {
     const isRecipe = await this.getRecipeById(id);
-    if(!Object.keys(isRecipe).length) return;
-    const updateRecipe = {id, ...Recipe};
+    if (!Object.keys(isRecipe).length) return;
+    const updateRecipe = { id, ...Recipe };
     updateRecipe.updatedAt = new Date();
     await fetch(`${recipeURL}/${id}`, {
       method: 'PUT',

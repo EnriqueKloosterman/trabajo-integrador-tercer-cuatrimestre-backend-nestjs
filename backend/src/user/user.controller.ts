@@ -11,7 +11,6 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { UserService } from './user.service';
-// import { User } from './user.interface';
 import { UsersDto } from './user.dto';
 import { Response } from 'express';
 

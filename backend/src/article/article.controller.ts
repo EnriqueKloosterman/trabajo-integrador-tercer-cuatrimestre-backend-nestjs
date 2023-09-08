@@ -6,13 +6,11 @@ import {
   Body,
   Delete,
   Put,
-  HttpCode,
   Res,
   HttpStatus,
   HttpException,
   BadRequestException,
 } from '@nestjs/common';
-import { Article } from './article.interface';
 import { ArticleService } from './article.service';
 import { Response } from 'express';
 import { CreateArticleDto } from './create-article.dto';
@@ -54,7 +52,7 @@ export class ArticleController {
   }
 
   @Delete('/:id')
-  deleteArticle(@Param('id') id: number): Promise<Article> {
+  deleteArticle(@Param('id') id: number): Promise<CreateArticleDto> {
     return this.articleService.deleteArticle(id);
   }
 

@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-// import { User } from './user.interface';
 import { UsersDto } from './user.dto';
 const URL = 'http://localhost:3030/users/';
 

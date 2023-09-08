@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsString, IsNotEmpty, IsArray, IsNumber, IsDate } from 'class-validator';
+import { IsString, IsNotEmpty, IsArray, IsNumber } from 'class-validator';
 
 export class CreateArticleDto {
   @Expose()
@@ -24,13 +24,7 @@ export class CreateArticleDto {
   @IsNotEmpty()
   user_id: number;
 
-  // @Expose()
-  // @IsDate()
-  // @IsNotEmpty()
   createdAt: Date;
 
-  // @Expose()
-  // @IsDate()
-  // @IsNotEmpty()
   updatedAt: Date;
 }

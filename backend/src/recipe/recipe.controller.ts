@@ -12,7 +12,7 @@ import {
   BadRequestException
 } from '@nestjs/common';
 import { RecipeService } from './recipe.service';
-import { Recipe } from './recipe.interface';
+import { RecipeDto } from './recipe.dto';
 import { Response } from 'express';
 
 @Controller('recipe')
@@ -43,7 +43,7 @@ export class RecipeController {
     }
   }
   @Post()
-  async createRecipe(@Body() recipe: Recipe, @Res() res: Response): Promise<any> {
+  async createRecipe(@Body() recipe: RecipeDto, @Res() res: Response): Promise<any> {
     try{
       const serviceResponse = await this.recipeService.createRecipe(recipe);
       await res.status(HttpStatus.CREATED).send(serviceResponse);
