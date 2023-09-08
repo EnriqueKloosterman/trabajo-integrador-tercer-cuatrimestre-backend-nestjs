@@ -9,6 +9,8 @@ import {
   Res,
   HttpStatus,
   BadRequestException,
+  ValidationPipe,
+  UsePipes
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UsersDto } from './user.dto';
@@ -18,6 +20,7 @@ import { Response } from 'express';
 export class UserController {
   constructor(private readonly userService: UserService) {}
   @Get()
+   @UsePipes(new ValidationPipe({ transform: true}))
   async getUser(@Res() res: Response): Promise<any> {
     try {
       const serviceResponse = await this.userService.getUsers();
@@ -27,6 +30,7 @@ export class UserController {
     }
   }
   @Get('/:id')
+  @UsePipes(new ValidationPipe({ transform: true}))
   async getUserById(
     @Param('id') id: number,
     @Res() res: Response,
@@ -43,6 +47,7 @@ export class UserController {
     }
   }
   @Post()
+  @UsePipes(new ValidationPipe({ transform: true}))
   async createUser(@Body() user: UsersDto, @Res() res: Response): Promise<any> {
     try {
       const serviceResponse = await this.userService.createUser(user);
@@ -52,6 +57,7 @@ export class UserController {
     }
   }
   @Delete('/:id')
+  @UsePipes(new ValidationPipe({ transform: true}))
   async deleteUser(
     @Param('id') id: number,
     @Res() res: Response,
@@ -64,6 +70,7 @@ export class UserController {
     }
   }
   @Put('/:id')
+  @UsePipes(new ValidationPipe({ transform: true}))
   async updateUser(
     @Param('id') id: number,
     @Body() body,

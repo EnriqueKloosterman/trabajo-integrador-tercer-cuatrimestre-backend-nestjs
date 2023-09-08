@@ -6,10 +6,11 @@ import {
   Body,
   Delete,
   Put,
-  HttpCode,
   Res,
   HttpStatus,
-  BadRequestException
+  BadRequestException,
+  ValidationPipe,
+  UsePipes
 } from '@nestjs/common';
 import { RecipeService } from './recipe.service';
 import { RecipeDto } from './recipe.dto';
@@ -19,6 +20,7 @@ import { Response } from 'express';
 export class RecipeController {
   constructor(private readonly recipeService: RecipeService) {}
   @Get()
+  @UsePipes(new ValidationPipe({ transform: true}))
   async getAllRecipes(@Res() res: Response): Promise<any> {
     try{
       const serviceResponse = await this.recipeService.getAllRecipes();
@@ -29,6 +31,7 @@ export class RecipeController {
     }
   }
   @Get(':id')
+  @UsePipes(new ValidationPipe({ transform: true}))
   async getRecipeById(@Param('id') id: number, @Res() res: Response): Promise<any> {
     try{
       const serviceResponse = await this.recipeService.getRecipeById(id);
@@ -43,6 +46,7 @@ export class RecipeController {
     }
   }
   @Post()
+  @UsePipes(new ValidationPipe({ transform: true}))
   async createRecipe(@Body() recipe: RecipeDto, @Res() res: Response): Promise<any> {
     try{
       const serviceResponse = await this.recipeService.createRecipe(recipe);
@@ -53,6 +57,7 @@ export class RecipeController {
     }
   }
   @Delete('/:id')
+  @UsePipes(new ValidationPipe({ transform: true}))
   async deleteRecipe(@Param('id') id: number, @Res() res: Response): Promise<any> {
    try{
     const serviceResponse = await this.recipeService.deleteRecipe(id);
@@ -62,6 +67,7 @@ export class RecipeController {
    }
   }
   @Put('/:id')
+  @UsePipes(new ValidationPipe({ transform: true}))
   async updateRecipe(@Param('id') id: number, @Body() body, @Res() res: Response): Promise<any> {
     try {
       const serviceResponse = await this.recipeService.updateRecipe(id, body);
@@ -69,6 +75,5 @@ export class RecipeController {
     } catch (error) {
       throw new BadRequestException('Recipe update failed')
     }
-    // return this.recipeService.updateRecipe(id, body);
   }
 }

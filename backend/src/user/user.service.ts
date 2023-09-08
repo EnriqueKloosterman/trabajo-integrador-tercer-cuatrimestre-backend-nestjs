@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { UsersDto } from './user.dto';
+import { log } from 'console';
 const URL = 'http://localhost:3030/users/';
 
 @Injectable()
@@ -38,6 +39,7 @@ export class UserService {
     const isUser = await this.getUserById(id);
     if (!Object.keys(isUser).length) return;
     const updateUser = { id, ...user };
+    // updateUser.createdAt = user.createdAt;
     updateUser.updatedAt = new Date();
     await fetch(`${URL}${id}`, {
       method: 'PUT',

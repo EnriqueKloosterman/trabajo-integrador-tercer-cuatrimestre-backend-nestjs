@@ -97,6 +97,25 @@
       "password": "password",
       "createdAt": "2023-09-07T20:20:52.361Z",
       "updatedAt": "2023-09-07T20:20:52.361Z"
+    },
+    {
+      "id": 11,
+      "name": "Sarah",
+      "lastName": "Pezzini",
+      "email": "witchblade@mail.com",
+      "userType": 2,
+      "password": "password",
+      "updatedAt": "2023-09-08T13:40:23.559Z"
+    },
+    {
+      "id": 12,
+      "name": "Izzy",
+      "lastName": "Stradlin",
+      "email": "gnr@mail.com",
+      "userType": 2,
+      "password": "password",
+      "createdAt": "2023-09-08T13:42:14.337Z",
+      "updatedAt": "2023-09-08T13:42:14.337Z"
     }
   ],
   "Recipe": [
@@ -143,7 +162,7 @@
     },
     {
       "id": 3,
-      "title": "Receta N3  re editada",
+      "title": "Receta N3 re editada",
       "recipe": [
         "Pon una cazuela con agua a fuego medio y, cuando esté hirviendo, añade los macarrones y cocínalos hasta que estén un poco al dente, ya que luego se calentarán con la carne. Cuando estén cocidos escúrrelos y resérvalos.",
         "Corta la carne en rodajas de 1 cm de grosor y salpimienta al gusto. Puedes hacer esta receta de lomo al pepe con lomo o con solomillo si lo prefieres.",
@@ -170,7 +189,7 @@
       "img": "https://cdn0.recetasgratis.net/es/posts/3/6/3/lomo_al_pepe_74363_600.webp",
       "userId": 1,
       "createdAt": "25/08/2023",
-      "updatedAt": "2023-09-04T12:45:43.762Z"
+      "updatedAt": "2023-09-08T13:08:43.660Z"
     }
   ],
   "Coments": [
