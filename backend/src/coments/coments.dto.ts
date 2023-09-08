@@ -3,7 +3,6 @@ import {
   IsString,
   IsNotEmpty,
   IsNumber,
-  IsDate,
 } from 'class-validator';
 
 export class CreateComentsDto {
@@ -13,14 +12,14 @@ export class CreateComentsDto {
   coment: string;
 
   @Expose()
-  @IsNumber()
   @IsNotEmpty()
-  userId: number;
+  @IsNumber()
+  user_id: number;
 
   @Expose()
-  @IsNumber()
   @IsNotEmpty()
-  recipeId: number;
+  @IsNumber()
+  recipe_id: number;
 
   createdAt: Date;
 

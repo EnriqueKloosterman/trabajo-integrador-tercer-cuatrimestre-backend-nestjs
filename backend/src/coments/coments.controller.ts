@@ -13,7 +13,6 @@ import {
   ValidationPipe,
   UsePipes
 } from '@nestjs/common';
-import { Coments } from './coments.interface';
 import { ComentsService } from './coments.service';
 import { Response } from 'express';
 import { CreateComentsDto } from './coments.dto';
@@ -84,7 +83,7 @@ export class ComentsController {
   @UsePipes(new ValidationPipe({ transform: true}))
   async updateComents(
     @Param('id') id: number,
-    @Body() body: Coments,
+    @Body() body: CreateComentsDto,
     @Res() res: Response,
   ): Promise<any> {
     try {

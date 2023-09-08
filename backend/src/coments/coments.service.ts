@@ -1,17 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { Coments } from './coments.interface';
 const comentsURL = 'http://localhost:3030/coments/';
 import { CreateComentsDto } from './coments.dto';
+import { AnyAaaaRecord } from 'dns';
 
 @Injectable()
 export class ComentsService {
-  async getComents(): Promise<Coments[]> {
+  async getComents(): Promise<any> {
     const res = await fetch(comentsURL);
     const parsed = await res.json();
     return parsed;
   }
 
-  async getComentsById(id: number): Promise<Coments> {
+  async getComentsById(id: number): Promise<any> {
     const res = await fetch(`${comentsURL}${id}`);
     const parsed = await res.json();
     return parsed;
@@ -33,7 +33,7 @@ export class ComentsService {
     return parsed;
   }
 
-  async deleteComents(id: number): Promise<Coments> {
+  async deleteComents(id: number): Promise<any> {
     const res = await fetch(`${comentsURL}${id}`, {
       method: 'DELETE',
     });

@@ -58,7 +58,6 @@ export class ArticleController {
 
   @Delete('/:id')
   @UsePipes(new ValidationPipe({ transform: true}))
-  @HttpCode(204)
   async deleteArticle(
     @Param('id') id: number,
     @Res() res: Response,
