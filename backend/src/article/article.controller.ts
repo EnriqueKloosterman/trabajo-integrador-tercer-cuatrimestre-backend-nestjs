@@ -67,7 +67,7 @@ export class ArticleController {
       await this.articleService.deleteArticle(id);
       return res.sendStatus(HttpStatus.NO_CONTENT);
     } catch (error) {
-      throw new BadRequestException(`Coments with id ${id} not found.`);
+      throw new BadRequestException(`Article with id ${id} not found.`);
     }
   }
 
