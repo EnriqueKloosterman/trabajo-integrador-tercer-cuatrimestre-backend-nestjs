@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 const comentsURL = 'http://localhost:3030/coments/';
 import { CreateComentsDto } from './coments.dto';
-import { AnyAaaaRecord } from 'dns';
 
 @Injectable()
 export class ComentsService {

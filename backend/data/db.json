@@ -80,13 +80,13 @@
     },
     {
       "id": 9,
-      "namme": "Juan",
-      "lastName": "Perz",
-      "email": "punisher@mail.com",
+      "name": "Priss",
+      "lastName": "Replicant",
+      "email": "rep@mail.com",
       "userType": 2,
       "password": "password",
       "createdAt": "2023-09-07T18:32:22.868Z",
-      "updatedAt": "2023-09-07T18:32:22.868Z"
+      "updatedAt": "2023-09-08T21:33:58.258Z"
     },
     {
       "id": 10,

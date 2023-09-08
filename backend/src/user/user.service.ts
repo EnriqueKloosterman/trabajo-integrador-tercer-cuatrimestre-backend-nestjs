@@ -37,7 +37,7 @@ export class UserService {
   async updateUser(id: number, user: UsersDto): Promise<any> {
     const isUser = await this.getUserById(id);
     if (!Object.keys(isUser).length) return;
-    const updateUser = { id, ...user };
+    const updateUser = { id, ...isUser, ...user };
     // updateUser.createdAt = user.createdAt;
     updateUser.updatedAt = new Date();
     await fetch(`${URL}${id}`, {

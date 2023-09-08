@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsInt} from "class-validator";
+import { IsNotEmpty, IsString, IsInt, IsEmail} from "class-validator";
 import { Expose } from "class-transformer";
 
 export class UsersDto {
@@ -14,7 +14,7 @@ export class UsersDto {
 
     @Expose()
     @IsNotEmpty()
-    @IsString()
+    @IsEmail()
     email: string;
 
     @Expose()
