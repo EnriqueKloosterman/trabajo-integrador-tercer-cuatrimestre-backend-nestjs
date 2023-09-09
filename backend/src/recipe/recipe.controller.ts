@@ -15,7 +15,9 @@ import {
 import { RecipeService } from './recipe.service';
 import { RecipeDto } from './recipe.dto';
 import { Response } from 'express';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('recipes')
 @Controller('recipe')
 export class RecipeController {
   constructor(private readonly recipeService: RecipeService) {}

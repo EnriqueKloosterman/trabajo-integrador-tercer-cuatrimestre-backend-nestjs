@@ -16,7 +16,9 @@ import {
 import { ArticleService } from './article.service';
 import { Response } from 'express';
 import { CreateArticleDto } from './create-article.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('articles')
 @Controller('articles')
 export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}

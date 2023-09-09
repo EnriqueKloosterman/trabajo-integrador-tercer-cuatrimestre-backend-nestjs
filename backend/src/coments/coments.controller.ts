@@ -16,7 +16,9 @@ import {
 import { ComentsService } from './coments.service';
 import { Response } from 'express';
 import { CreateComentsDto } from './coments.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('coments')
 @Controller('coments')
 export class ComentsController {
   constructor(private readonly comentsService: ComentsService) {}
