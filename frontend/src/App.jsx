@@ -1,5 +1,4 @@
-
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import Article from './componentes/Article';
 import Coments from './componentes/Coments';
 import Recipe from './componentes/Recipe';
@@ -7,27 +6,19 @@ import Users from './componentes/Users';
 
 function App() {
   return (
-    // <Router>
-    //   <div className="App">
-    //     {/* Encabezado u otras partes comunes */}
-    //     <Switch>
-    //       <Route path="/articles" component={Article} />
-    //       <Route path="/coments" component={Coments} /> 
-    //       <Route path="/recipes" component={Recipe} />  
-    //       <Route path="/users" component={Users} />        
-    //       {/* Establece la ruta raíz como página de inicio */}
-    //       <Route exact path="/" component={Article} />  
-    //     </Switch>
-    //     {/* Pie de página u otras partes comunes */}
-    //   </div>
-    // </Router>
-     <>
-      <Article />
-      <Coments />
-      <Recipe /> 
-      <Users />
-     </>
-    )
+
+    <Routes>
+
+          {/* <Route path="/articles" component={<Article />} /> */}
+          <Route path="/coments" element={<Coments />} /> 
+          <Route path="/recipes" element={<Recipe />} />  
+          <Route path="/users" element={<Users />} />        
+
+          <Route exact path="/" element={<Article />} />  
+
+    </Routes>
+
+    );
 
 }
 

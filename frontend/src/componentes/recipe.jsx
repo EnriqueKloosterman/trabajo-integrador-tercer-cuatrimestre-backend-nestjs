@@ -23,7 +23,6 @@ function Recipe() {
             <h2>{recipe.title}</h2>
             <p>{recipe.recipe}</p>
             <img src={recipe.img} alt={recipe.title} />
-            {}
           </li>
         ))}
       </ul>

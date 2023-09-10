@@ -9,7 +9,7 @@ function Article() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setArticles(data); // Accede a la propiedad "Article" en el objeto JSON
+        setArticles(data); 
       });
   }, []);
 
@@ -24,7 +24,6 @@ function Article() {
               <p key={j}>{paragraph}</p>
             ))}
             <img src={article.img} alt={article.title} />
-            {}
           </li>
         ))}
       </ul>
@@ -33,4 +32,3 @@ function Article() {
 }
 
 export default Article;
-

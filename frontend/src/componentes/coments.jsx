@@ -22,7 +22,6 @@ function Coments() {
           <li key={i}>
             <p>{coment.coment}</p>
             <img src={coment.img} alt={`Coment ${i}`} />
-            {}
           </li>
         ))}
       </ul>

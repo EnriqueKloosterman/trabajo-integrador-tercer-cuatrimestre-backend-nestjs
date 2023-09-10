@@ -14,7 +14,6 @@ function Users() {
       });
   }, []);
 
-  // return users data inside a ul
   return (
     <ul>
       {users.map((user, i) => {
@@ -28,19 +27,6 @@ function Users() {
       })}
     </ul>
   );
-
-  // return (
-  //     users.map((user, i) => {
-  //         <div key={i}>
-  //             <h1>{user.name}</h1>
-  //             <h2>{user.email}</h2>
-  //             <h3>{user.password}</h3>
-  //             <h4>{user.role}</h4>
-  //             <h5>{user.createdAt}</h5>
-  //             <h6>{user.updatedAt}</h6>
-  //         </div>
-  //     })
-  // )
 }
 
 export default Users;
