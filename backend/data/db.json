@@ -224,30 +224,72 @@
   "Article": [
     {
       "id": 1,
-      "title": "Titulo del articulo",
-      "article": "texto del articlo",
-      "img": "imagen",
+      "title": "El Correcto Uso de Utensilios de Cocina: Consejos Esenciales",
+      "article": [
+        "La cocina es un arte que requiere de habilidad, paciencia y una comprensión profunda de los utensilios adecuados. El uso correcto de los utensilios de cocina es esencial para preparar comidas deliciosas y seguras. En este artículo, exploraremos los principios básicos del uso adecuado de utensilios de cocina, desde cuchillos afilados hasta sartenes antiadherentes. ¡Vamos a sumergirnos en el mundo de la cocina!",
+        "Cuchillos",
+        "Los cuchillos son herramientas fundamentales en la cocina. Un cuchillo afilado es más seguro que uno desafilado, ya que requiere menos esfuerzo al cortar. Aquí hay algunos consejos sobre su uso adecuado:",
+        "Mantén los cuchillos afilados: Afila tus cuchillos regularmente con una piedra de afilar o una chaira. Un cuchillo romo es más propenso a resbalar y causar lesiones.",
+        "Usa una tabla de cortar adecuada: Evita dañar el filo del cuchillo cortando sobre superficies duras como vidrio o mármol. Opta por tablas de madera o plástico.",
+        "Corta con movimientos suaves: Utiliza movimientos controlados y uniformes al cortar para evitar cortarte. Mantén tus dedos alejados de la trayectoria del cuchillo y utiliza la técnica del 'corte de garra' para sujetar los ingredientes de manera segura.",
+        "Sartenes",
+        "Las sartenes son esenciales para cocinar una amplia variedad de alimentos. Asegúrate de utilizarlas adecuadamente:",
+        "Preparación adecuada: Antes de cocinar, precalienta la sartén a la temperatura correcta para evitar que los alimentos se peguen.",
+        "Mantén la sartén limpia: Lava la sartén con agua tibia y detergente después de cada uso. Evita el uso de estropajos abrasivos que puedan dañar la superficie antiadherente.",
+        "Utiliza utensilios de cocina adecuados: Evita el uso de utensilios de metal que puedan rayar la superficie de la sartén antiadherente. Opta por utensilios de madera, silicona o plástico.",
+        "Cacerolas y Ollas",
+        "Las cacerolas y ollas son imprescindibles para cocinar guisos, sopas y otros platos. Aquí tienes algunos consejos:",
+        "Distribución uniforme del calor: Asegúrate de que el tamaño de la cacerola sea adecuado para la fuente de calor. Una cacerola más grande que la hornilla puede provocar una cocción desigual.",
+        "Cuidado con la temperatura: Evita calentar la cacerola en exceso. Cocinar a fuego medio o bajo puede ser suficiente en muchas ocasiones y previene que los alimentos se quemen o peguen.",
+        "Revuelve regularmente: Al cocinar alimentos que requieran tiempo en la cacerola, revuelve regularmente para evitar que se peguen o se quemen en el fondo.",
+        "Utensilios de Medición",
+        "La precisión en la cocina es crucial, especialmente al hornear. Utiliza utensilios de medición correctamente:",
+        "Niveles de llenado: Cuando mides ingredientes secos, como harina o azúcar, llena la taza de medir y nivélala con una espátula o un cuchillo para obtener una medición precisa.",
+        "Usa utensilios secos: Asegúrate de que los utensilios de medición estén secos al medir ingredientes secos y líquidos al medir ingredientes líquidos para evitar errores en las proporciones.",
+        "Mide con precisión: Sigue las recetas al pie de la letra y utiliza tazas y cucharas de medición estándar para obtener resultados consistentes."
+      ],
+      "img": "https://vallesdelesla.com/wp-content/uploads/2023/02/utensilios-cocina-chef.jpegn",
       "user_id": 1,
       "createdAt": "2023-08-17T15:34:00Z",
-      "updatedAt": ""
+      "updatedAt": "2023-09-10T16:32:00.336Z"
     },
     {
       "id": 2,
-      "title": "Titulo del articulo 2",
-      "article": "texto del articlo 2",
-      "img": "imagen",
+      "title": "¡Aprovechando al Máximo los Ratones en la Cocina!",
+      "article": [
+        "¿Estás cansado de los mismos ingredientes aburridos en tu cocina? ¿Quieres darle un giro inesperado a tus comidas? Bueno, ¡tenemos la solución para ti! ¿Por qué no aprovechar al máximo esos traviesos ratones que merodean tu cocina? ¡Sí, has leído bien! Estos pequeños amigos peludos pueden convertirse en la sorpresa secreta de tus recetas.",
+        "Sopa de Ratón al Estilo Gourmet",
+        "Nada dice 'alta cocina' como una sopa de ratón. Para comenzar, asegúrate de atrapar a tu ratón con elegancia y destreza culinaria. Luego, lávelo a conciencia (porque la higiene es importante, incluso en esta broma) y colócalo en una olla con agua hirviendo. Añade algunas hierbas y especias, y ¡voilà! Tendrás una sopa de ratón que impresionará a tus invitados. Solo asegúrate de servirla en porciones muy pequeñas.",
+        "Ratón a la Parrilla con Salsa Especial",
+        "¿Quieres impresionar a tus amigos en la próxima parrillada? No busques más allá de tu despensa, donde seguramente encontrarás un ratón dispuesto a ser la estrella de la parrilla. Sazona al ratón con tus especias favoritas, ásalo a la parrilla hasta que esté dorado y crujiente, y sírvelo con una salsa especial de tu elección. ¡Una experiencia culinaria inolvidable!",
+        "Ratón a la Vinagreta de Frambuesa",
+        "Para un toque más sofisticado, prueba el ratón a la vinagreta de frambuesa. Marida perfectamente con una ensalada de hojas verdes frescas y nueces. Los ratones pequeños funcionan mejor para esta receta, ya que son más tiernos y jugosos. Añade una vinagreta de frambuesa casera para darle un toque de elegancia.",
+        "Postre Sorpresa de Ratón",
+        "¿Quieres sorprender a tus invitados con un postre inolvidable? Prueba nuestra receta de pastel sorpresa de ratón. Hornea un pastel de tu elección y, una vez enfriado, coloca un ratón cuidadosamente lavado en el centro. Cubre con crema batida y frutas frescas para una presentación espectacular. ¡La sorpresa en sus caras será impagable!"
+      ],
+      "img": "https://img.freepik.com/fotos-premium/numerosas-ratas-escena-interior-cocina-muchos-roedores-cocina-ia-generativa_174954-1488.jpg",
       "user_id": 1,
       "createdAt": "2023-08-17T15:34:00Z",
-      "updatedAt": ""
+      "updatedAt": "2023-09-10T16:41:44.849Z"
     },
     {
       "id": 3,
-      "title": "Articulo 3",
-      "article": "texto del articlo 3",
-      "img": "imagen",
+      "title": "Los Sorprendentes Beneficios de Comer Helado Frito",
+      "article": [
+        "¡Atención, amantes de los placeres culinarios! Hoy les traemos una revelación que sacudirá sus papilas gustativas y hará que reconsideren sus elecciones dietéticas. ¿Alguna vez te has preguntado por qué los helados fritos aún no han sido declarados como un súper alimento? Bueno, prepárate para descubrir los supuestos beneficios de esta deliciosa delicia frita. ¡Asegúrate de no tomar esto en serio!",
+        "Aumento de la Resistencia al Frío:",
+        "¿Te mueres de frío en invierno? ¡No hay problema! Comer helado frito puede aumentar tu resistencia al frío. El aceite caliente en el que se fríe el helado actúa como una capa aislante, manteniéndote caliente incluso en las condiciones más gélidas. ¡Despídete de los abrigos!",
+        "Habilidad Ninja Mejorada:",
+        "¿Alguna vez has soñado con ser un ninja? Comer helado frito te acerca un paso más a ese sueño. Los helados fritos son resbaladizos y difíciles de agarrar, lo que te obliga a desarrollar reflejos ninja para evitar que se te caigan al suelo. ¡Prepárate para esquivar y atrapar como un auténtico maestro ninja!",
+        "Satisfacción Instantánea:",
+        "¿Te abruma el estrés diario? El helado frito es tu respuesta. El acto de sumergir una bola de helado en aceite caliente y verla convertirse en una deliciosa bola crujiente es tan satisfactorio que todos tus problemas parecerán desvanecerse. No es necesario un spa, ¡solo un plato de helado frito!",
+        "Lecciones de Paciencia:",
+        "Necesitas trabajar en tu paciencia? El helado frito es tu entrenador personal. Tienes que esperar a que el aceite esté a la temperatura perfecta y a que el helado esté bien congelado antes de freírlo. ¡Practicarás la paciencia con cada bocado!"
+      ],
+      "img": "https://irepo.primecp.com/2016/09/300292/Crunchy-Almond-Ice-Cream-Balls_Category-CategoryPageDefault_ID-1880574.jpg?v=1880574",
       "user_id": 1,
       "createdAt": "2023-08-17T15:34:00Z",
-      "updatedAt": "2023-09-07T20:19:46.500Z"
+      "updatedAt": "2023-09-10T17:08:31.924Z"
     }
   ]
 }
