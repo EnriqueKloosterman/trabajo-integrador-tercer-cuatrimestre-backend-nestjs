@@ -14,7 +14,7 @@ function App() {
           <Route path="/articles" component={Article} />
           <Route path="/coments" component={Coments} /> 
           <Route path="/recipes" component={Recipe} />  
-          <Route path="/users" component={User} />        
+          <Route path="/users" component={Users} />        
           {/* Establece la ruta raíz como página de inicio */}
           <Route exact path="/" component={Article} />  
         </Switch>
