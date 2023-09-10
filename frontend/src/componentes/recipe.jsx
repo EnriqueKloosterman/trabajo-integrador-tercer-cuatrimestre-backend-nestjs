@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 
 function Recipe() {
@@ -10,7 +10,7 @@ function Recipe() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setRecipes(data.Recipe); // Accede a la propiedad "Recipe" en el objeto JSON
+        setRecipes(data); // Accede a la propiedad "Recipe" en el objeto JSON
       });
   }, []);
 

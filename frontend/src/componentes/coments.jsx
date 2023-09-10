@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 
 function Coments() {
@@ -10,7 +10,7 @@ function Coments() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setComents(data.Coments); // Accede a la propiedad "Coments" en el objeto JSON
+        setComents(data); // Accede a la propiedad "Coments" en el objeto JSON
       });
   }, []);
 
