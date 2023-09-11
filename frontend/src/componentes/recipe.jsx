@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-
 function Recipe() {
   const [recipes, setRecipes] = useState([]);
   const recipesUrl = "http://localhost:3000/api/v1/recipe";
@@ -10,26 +9,30 @@ function Recipe() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setRecipes(data); // Accede a la propiedad "Recipe" en el objeto JSON
+        setRecipes(data);
       });
   }, []);
 
   return (
-    <div>
-      <ul>
+    <div className="container mx-auto p-4">
+      <ul className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {recipes.map((recipe, i) => (
-          <li key={i}>
-            <h2 className="text-3xl font-bold text-neutral-900">{recipe.title}</h2>
-            {/* <p>{recipe.recipe}</p> */}
-            {recipe.recipe.map((paragraph, j) => (
-              <p key={j}>{paragraph}</p>
-            ))}
-            <ul className="list-disc">
-              {recipe.ingredients.map((ingredient, k) => (
-                <li key={k}>{ingredient}</li>
-              ))}
-            </ul>
-            <img src={recipe.img} alt={recipe.title} />
+          <li key={i} className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src={recipe.img} alt={recipe.title} className="w-full h-48 object-cover" />
+            <div className="p-4">
+              <h2 className="text-2xl font-semibold text-neutral-900 mb-2">{recipe.title}</h2>
+              <ul className="list-disc pl-6">
+                {recipe.recipe.map((paragraph, j) => (
+                  <li key={j} className="text-neutral-700 text-base mb-2">{paragraph}</li>
+                ))}
+              </ul>
+              <h3 className="text-lg font-semibold text-neutral-900 mt-4">Ingredientes:</h3>
+              <ul className="list-disc pl-6">
+                {recipe.ingredients.map((ingredient, k) => (
+                  <li key={k} className="text-neutral-700 text-base mb-2">{ingredient}</li>
+                ))}
+              </ul>
+            </div>
           </li>
         ))}
       </ul>

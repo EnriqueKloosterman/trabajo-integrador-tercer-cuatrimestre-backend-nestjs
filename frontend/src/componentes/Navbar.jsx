@@ -1,21 +1,29 @@
 import { Link } from 'react-router-dom';
 
-
 function Navbar() {
   return (
-    <div className='w-3/4 bg-slate-800 p-3 my-3 mx-auto rounded-md'>
-        <nav>
-            <ul className=' flex flex-row justify-around font-bold text-sm md:text-base lg:text-lg text-white'>
-                <li>
-                    <Link to="/" className='navLink'>Home</Link>
-                </li>
-                <li>
-                    <Link to="/recipes" className='navLink'>Recetas</Link>                
-                </li>
-            </ul>
-        </nav>
+    <div className="bg-gradient-to-r from-purple-700 via-purple-600 to-blue-500 py-4">
+      <nav className="container mx-auto flex justify-between items-center">
+        <Link to="/" className="text-4xl font-extrabold text-white text-opacity-90 hover:text-opacity-100 transition-colors duration-300">Mi Blog de Cocina</Link>
+        <ul className="flex space-x-6 text-lg font-semibold text-white">
+          <li className="relative group">
+            <Link to="/" className="hover:text-lime-400">Inicio</Link>
+            <div className="absolute w-0.5 h-6 bg-white group-hover:w-8 transition-all duration-300 origin-left"></div>
+          </li>
+          <li className="relative group">
+            <Link to="/recipes" className="hover:text-lime-400">Recetas</Link>
+            <div className="absolute w-0.5 h-6 bg-white group-hover:w-8 transition-all duration-300 origin-left"></div>
+          </li>
+          <li className="relative group">
+            <Link to="/contact" className="hover:text-lime-400">Contacto</Link>
+            <div className="absolute w-0.5 h-6 bg-white group-hover:w-8 transition-all duration-300 origin-left"></div>
+          </li>
+        </ul>
+      </nav>
     </div>
   )
 }
 
-export default Navbar
+export default Navbar;
+
+

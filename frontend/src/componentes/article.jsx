@@ -1,4 +1,4 @@
-import { useState,  useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function Article() {
   const [articles, setArticles] = useState([]);
@@ -9,21 +9,24 @@ function Article() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setArticles(data); 
+        setArticles(data);
       });
   }, []);
 
   return (
-    <div>
-      <h1 className="text-center text-4xl text-bold text-lime-700">Articles</h1>
-      <ul>
+    <div className="container mx-auto p-4">
+      <ul className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {articles.map((article, i) => (
-          <li key={i}>
-            <h2 className="text-3xl text-strong">{article.title}</h2>
-            <img src={article.img} alt={article.title} />
-            {article.article.map((paragraph, j) => (
-              <p key={j}>{paragraph}</p>
-              ))}
+          <li key={i} className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src={article.img} alt={article.title} className="w-full h-48 object-cover" />
+            <div className="p-4">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-2">{article.title}</h2>
+              <ul className="list-disc pl-6">
+                {article.article.map((paragraph, j) => (
+                  <li key={j} className="text-gray-700 text-base mb-2">{paragraph}</li>
+                ))}
+              </ul>
+            </div>
           </li>
         ))}
       </ul>

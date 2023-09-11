@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-
 function Users() {
   const [users, setUsers] = useState([]);
   const usersUrl = "http://localhost:3000/api/v1/users";
@@ -15,18 +14,19 @@ function Users() {
   }, []);
 
   return (
-    <ul>
-      {users.map((user, i) => {
-        return (
-          <li key={i}>
-            <h1>{user.name}</h1>
-            <h2>{user.lastName}</h2>
-            <h2>{user.email}</h2>
+    <div className="container mx-auto p-4">
+      <h1 className="text-4xl font-bold text-lime-700 mb-8">Lista de Usuarios</h1>
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {users.map((user, i) => (
+          <li key={i} className="bg-white shadow-lg rounded-lg p-4">
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">{user.name} {user.lastName}</h2>
+            <p className="text-lg text-gray-700 mb-2">{user.email}</p>
           </li>
-        );
-      })}
-    </ul>
+        ))}
+      </ul>
+    </div>
   );
 }
 
 export default Users;
+
