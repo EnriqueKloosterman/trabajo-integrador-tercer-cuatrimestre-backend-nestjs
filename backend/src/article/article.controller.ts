@@ -17,6 +17,7 @@ import { ArticleService } from './article.service';
 import { Response } from 'express';
 import { CreateArticleDto } from './create-article.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { NotFoundException } from '@nestjs/common';
 
 @ApiTags('articles')
 @Controller('articles')
@@ -30,20 +31,22 @@ export class ArticleController {
     return res.status(HttpStatus.OK).json(articles);
   }
 
-  @Get('/:id')
+  @Get(':id')
   @UsePipes(new ValidationPipe({ transform: true }))
   async getArticleById(
     @Param('id') id: number,
     @Res() res: Response,
   ): Promise<any> {
-    const article = await this.articleService.getArticleById(id);
-    if (!article) {
-      throw new HttpException(
-        `Article with id ${id} not found.`,
-        HttpStatus.NOT_FOUND,
-      );
+    try {
+      const serviceResponse = await this.articleService.getArticleById(id);
+      if (Object.keys(serviceResponse).length) {
+        return res.status(HttpStatus.OK).send(serviceResponse);
+      } else {
+        throw new NotFoundException(`Recipe with id ${id} not found.`);
+      }
+    } catch (error) {
+      return res.status(HttpStatus.BAD_REQUEST).json(error);
     }
-    return res.status(HttpStatus.OK).json(article);
   }
 
   @Post()

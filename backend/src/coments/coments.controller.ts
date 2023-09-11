@@ -17,6 +17,7 @@ import { ComentsService } from './coments.service';
 import { Response } from 'express';
 import { CreateComentsDto } from './coments.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { NotFoundException } from '@nestjs/common';
 
 @ApiTags('coments')
 @Controller('coments')
@@ -35,24 +36,22 @@ export class ComentsController {
   }
 
   @Get(':id')
-  @UsePipes(new ValidationPipe({ transform: true }))
-  async getComentsById(
-    @Param('id') id: number,
-    @Res() res: Response,
-  ): Promise<any> {
-    try {
-      const coments = await this.comentsService.getComentsById(id);
-      if (coments) {
-        return res.status(HttpStatus.OK).json(coments);
-      } else {
-        return res
-          .status(HttpStatus.NOT_FOUND)
-          .json({ message: 'Coments not found' });
-      }
-    } catch (error) {
-      throw new BadRequestException(`Coments with id ${id} not found.`);
+@UsePipes(new ValidationPipe({ transform: true }))
+async getComentsById(
+  @Param('id') id: number,
+  @Res() res: Response,
+): Promise<any> {
+  try {
+    const serviceResponse = await this.comentsService.getComentsById(id);
+    if (Object.keys(serviceResponse).length) {
+      return res.status(HttpStatus.OK).send(serviceResponse);
+    } else {
+      throw new NotFoundException(`Recipe with id ${id} not found.`);
     }
+  } catch (error) {
+    return res.status(HttpStatus.BAD_REQUEST).json(error);
   }
+}
 
   @Post()
   @UsePipes(new ValidationPipe({ transform: true }))

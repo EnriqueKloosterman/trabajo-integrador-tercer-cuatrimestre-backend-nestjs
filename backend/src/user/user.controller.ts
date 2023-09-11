@@ -16,6 +16,7 @@ import { UserService } from './user.service';
 import { UsersDto } from './user.dto';
 import { Response } from 'express';
 import { ApiTags } from '@nestjs/swagger';
+import { NotFoundException } from '@nestjs/common';
 
 @ApiTags('users')
 @Controller('users')
@@ -31,9 +32,9 @@ export class UserController {
       return res.status(HttpStatus.BAD_REQUEST).json(error);
     }
   }
-  @Get('/:id')
+  @Get(':id')
   @UsePipes(new ValidationPipe({ transform: true }))
-  async getUserById(
+  async getUsersById(
     @Param('id') id: number,
     @Res() res: Response,
   ): Promise<any> {
@@ -42,10 +43,10 @@ export class UserController {
       if (Object.keys(serviceResponse).length) {
         return res.status(HttpStatus.OK).send(serviceResponse);
       } else {
-        return res.status(HttpStatus.NOT_FOUND).send(serviceResponse);
+        throw new NotFoundException(`Recipe with id ${id} not found.`);
       }
     } catch (error) {
-      throw new BadRequestException(`User with id ${id} not found`);
+      return res.status(HttpStatus.BAD_REQUEST).json(error);
     }
   }
   @Post()

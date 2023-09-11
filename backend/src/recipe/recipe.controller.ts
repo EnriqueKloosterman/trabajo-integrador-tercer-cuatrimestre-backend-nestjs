@@ -16,6 +16,7 @@ import { RecipeService } from './recipe.service';
 import { RecipeDto } from './recipe.dto';
 import { Response } from 'express';
 import { ApiTags } from '@nestjs/swagger';
+import { NotFoundException } from '@nestjs/common';
 
 @ApiTags('recipes')
 @Controller('recipe')
@@ -32,22 +33,23 @@ export class RecipeController {
     }
   }
   @Get(':id')
-  @UsePipes(new ValidationPipe({ transform: true }))
-  async getRecipeById(
-    @Param('id') id: number,
-    @Res() res: Response,
-  ): Promise<any> {
-    try {
-      const serviceResponse = await this.recipeService.getRecipeById(id);
-      if (Object.keys(serviceResponse).length) {
-        return res.status(HttpStatus.OK).send(serviceResponse);
-      } else {
-        return res.status(HttpStatus.NOT_FOUND).send(serviceResponse);
-      }
-    } catch (error) {
-      throw new BadRequestException(`Recipe with id ${id} not found.`);
+@UsePipes(new ValidationPipe({ transform: true }))
+async getRecipeById(
+  @Param('id') id: number,
+  @Res() res: Response,
+): Promise<any> {
+  try {
+    const serviceResponse = await this.recipeService.getRecipeById(id);
+    if (Object.keys(serviceResponse).length) {
+      return res.status(HttpStatus.OK).send(serviceResponse);
+    } else {
+      throw new NotFoundException(`Recipe with id ${id} not found.`);
     }
+  } catch (error) {
+    return res.status(HttpStatus.BAD_REQUEST).json(error);
   }
+}
+
   @Post()
   @UsePipes(new ValidationPipe({ transform: true }))
   async createRecipe(
