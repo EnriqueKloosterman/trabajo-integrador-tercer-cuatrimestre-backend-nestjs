@@ -16,12 +16,19 @@ function Recipe() {
 
   return (
     <div>
-      <h1>Recipes</h1>
       <ul>
         {recipes.map((recipe, i) => (
           <li key={i}>
-            <h2>{recipe.title}</h2>
-            <p>{recipe.recipe}</p>
+            <h2 className="text-3xl font-bold text-neutral-900">{recipe.title}</h2>
+            {/* <p>{recipe.recipe}</p> */}
+            {recipe.recipe.map((paragraph, j) => (
+              <p key={j}>{paragraph}</p>
+            ))}
+            <ul className="list-disc">
+              {recipe.ingredients.map((ingredient, k) => (
+                <li key={k}>{ingredient}</li>
+              ))}
+            </ul>
             <img src={recipe.img} alt={recipe.title} />
           </li>
         ))}

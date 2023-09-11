@@ -20,10 +20,10 @@ function Article() {
         {articles.map((article, i) => (
           <li key={i}>
             <h2 className="text-3xl text-strong">{article.title}</h2>
+            <img src={article.img} alt={article.title} />
             {article.article.map((paragraph, j) => (
               <p key={j}>{paragraph}</p>
-            ))}
-            <img src={article.img} alt={article.title} />
+              ))}
           </li>
         ))}
       </ul>
