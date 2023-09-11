@@ -11,7 +11,7 @@ import {
   HttpException,
   BadRequestException,
   ValidationPipe,
-  UsePipes
+  UsePipes,
 } from '@nestjs/common';
 import { ArticleService } from './article.service';
 import { Response } from 'express';
@@ -24,14 +24,14 @@ export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}
 
   @Get()
-  @UsePipes(new ValidationPipe({ transform: true}))
+  @UsePipes(new ValidationPipe({ transform: true }))
   async getArticles(@Res() res: Response): Promise<any> {
     const articles = await this.articleService.getArticles();
     return res.status(HttpStatus.OK).json(articles);
   }
 
   @Get('/:id')
-  @UsePipes(new ValidationPipe({ transform: true}))
+  @UsePipes(new ValidationPipe({ transform: true }))
   async getArticleById(
     @Param('id') id: number,
     @Res() res: Response,
@@ -47,7 +47,7 @@ export class ArticleController {
   }
 
   @Post()
-  @UsePipes(new ValidationPipe({ transform: true}))
+  @UsePipes(new ValidationPipe({ transform: true }))
   async createArticle(
     @Body() createArticleDto: CreateArticleDto,
     @Res() res: Response,
@@ -59,7 +59,7 @@ export class ArticleController {
   }
 
   @Delete('/:id')
-  @UsePipes(new ValidationPipe({ transform: true}))
+  @UsePipes(new ValidationPipe({ transform: true }))
   async deleteArticle(
     @Param('id') id: number,
     @Res() res: Response,
@@ -73,14 +73,17 @@ export class ArticleController {
   }
 
   @Put('/:id')
-  @UsePipes(new ValidationPipe({ transform: true}))
+  @UsePipes(new ValidationPipe({ transform: true }))
   async updateArticle(
     @Param('id') id: number,
-    @Body() body,
+    @Body() article: CreateArticleDto,
     @Res() res: Response,
   ): Promise<any> {
     try {
-      const serviceResponse = await this.articleService.updateArticle(id, body);
+      const serviceResponse = await this.articleService.updateArticle(
+        id,
+        article,
+      );
       res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
     } catch (error) {
       throw new BadRequestException(`Article update failed`);

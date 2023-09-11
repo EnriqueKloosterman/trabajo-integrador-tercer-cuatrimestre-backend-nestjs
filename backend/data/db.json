@@ -52,12 +52,12 @@
     },
     {
       "id": 6,
-      "name": "Jesse P",
+      "name": "Jesse",
       "lastName": "Custer",
       "email": "preacher@mail.com",
       "userType": 2,
       "password": "password",
-      "updatedAt": "2023-09-07T18:14:53.389Z"
+      "updatedAt": "2023-09-11T19:05:03.453Z"
     },
     {
       "id": 7,

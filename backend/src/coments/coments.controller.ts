@@ -11,7 +11,7 @@ import {
   HttpStatus,
   BadRequestException,
   ValidationPipe,
-  UsePipes
+  UsePipes,
 } from '@nestjs/common';
 import { ComentsService } from './coments.service';
 import { Response } from 'express';
@@ -24,7 +24,7 @@ export class ComentsController {
   constructor(private readonly comentsService: ComentsService) {}
 
   @Get()
-  @UsePipes(new ValidationPipe({ transform: true}))
+  @UsePipes(new ValidationPipe({ transform: true }))
   async getComents(@Res() res: Response): Promise<any> {
     try {
       const coments = await this.comentsService.getComents();
@@ -35,7 +35,7 @@ export class ComentsController {
   }
 
   @Get(':id')
-  @UsePipes(new ValidationPipe({ transform: true}))
+  @UsePipes(new ValidationPipe({ transform: true }))
   async getComentsById(
     @Param('id') id: number,
     @Res() res: Response,
@@ -55,7 +55,7 @@ export class ComentsController {
   }
 
   @Post()
-  @UsePipes(new ValidationPipe({ transform: true}))
+  @UsePipes(new ValidationPipe({ transform: true }))
   async createComents(
     @Body() createdComentsDto: CreateComentsDto,
     @Res() res: Response,
@@ -67,7 +67,7 @@ export class ComentsController {
   }
 
   @Delete('/:id')
-  @UsePipes(new ValidationPipe({ transform: true}))
+  @UsePipes(new ValidationPipe({ transform: true }))
   @HttpCode(204)
   async deleteComents(
     @Param('id') id: number,
@@ -82,7 +82,7 @@ export class ComentsController {
   }
 
   @Put('/:id')
-  @UsePipes(new ValidationPipe({ transform: true}))
+  @UsePipes(new ValidationPipe({ transform: true }))
   async updateComents(
     @Param('id') id: number,
     @Body() body: CreateComentsDto,
