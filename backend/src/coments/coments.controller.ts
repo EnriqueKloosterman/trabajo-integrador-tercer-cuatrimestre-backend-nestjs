@@ -46,7 +46,7 @@ async getComentsById(
     if (Object.keys(serviceResponse).length) {
       return res.status(HttpStatus.OK).send(serviceResponse);
     } else {
-      throw new NotFoundException(`Recipe with id ${id} not found.`);
+      throw new NotFoundException(`coments with id ${id} not found.`);
     }
   } catch (error) {
     return res.status(HttpStatus.BAD_REQUEST).json(error);
@@ -91,7 +91,7 @@ async getComentsById(
       await this.comentsService.updateComents(id, body);
       return res.sendStatus(HttpStatus.NO_CONTENT);
     } catch (error) {
-      throw new BadRequestException(`Coments with id ${id} not found.`);
+      throw new BadRequestException(`Coment with id ${id} not found.`);
     }
   }
 }

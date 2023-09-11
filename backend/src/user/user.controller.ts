@@ -43,7 +43,7 @@ export class UserController {
       if (Object.keys(serviceResponse).length) {
         return res.status(HttpStatus.OK).send(serviceResponse);
       } else {
-        throw new NotFoundException(`Recipe with id ${id} not found.`);
+        throw new NotFoundException(`user with id ${id} not found.`);
       }
     } catch (error) {
       return res.status(HttpStatus.BAD_REQUEST).json(error);
@@ -81,9 +81,9 @@ export class UserController {
   ): Promise<any> {
     try {
       const serviceResponse = await this.userService.updateUser(id, user);
-      res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+      return res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
     } catch (error) {
-      throw new BadRequestException(`User update failed`);
+      throw new BadRequestException(`User with id ${id} not found`);
     }
   }
 }

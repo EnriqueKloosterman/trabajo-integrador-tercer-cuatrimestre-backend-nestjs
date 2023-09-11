@@ -8,7 +8,6 @@ import {
   Put,
   Res,
   HttpStatus,
-  HttpException,
   BadRequestException,
   ValidationPipe,
   UsePipes,
@@ -42,7 +41,7 @@ export class ArticleController {
       if (Object.keys(serviceResponse).length) {
         return res.status(HttpStatus.OK).send(serviceResponse);
       } else {
-        throw new NotFoundException(`Recipe with id ${id} not found.`);
+        throw new NotFoundException(`article with id ${id} not found.`);
       }
     } catch (error) {
       return res.status(HttpStatus.BAD_REQUEST).json(error);
@@ -83,13 +82,10 @@ export class ArticleController {
     @Res() res: Response,
   ): Promise<any> {
     try {
-      const serviceResponse = await this.articleService.updateArticle(
-        id,
-        article,
-      );
-      res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+      await this.articleService.updateArticle(id, article);
+      return res.sendStatus(HttpStatus.NO_CONTENT);
     } catch (error) {
-      throw new BadRequestException(`Article update failed`);
+      throw new BadRequestException(`Article with id ${id} not found.`);
     }
   }
 }
