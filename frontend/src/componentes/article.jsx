@@ -45,10 +45,10 @@ function Article() {
           <li key={i} className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img src={article.img} alt={article.title} className="w-full h-48 object-cover" />
             <div className="p-4">
-              <h2 className="text-2xl font-semibold text-violet-900 mb-2">{article.title}</h2>
+              <h2 className="text-2xl font-semibold text-black mb-2">{article.title}</h2>
               <ul className="pl-6">
                 {article.article.slice(0, 1).map((paragraph, j) => (
-                  <li key={j} className="text-violet-700 text-base mb-2">{paragraph}</li>
+                  <li key={j} className="text-black text-base mb-2">{paragraph}</li>
                 ))}
               </ul>
             </div>
