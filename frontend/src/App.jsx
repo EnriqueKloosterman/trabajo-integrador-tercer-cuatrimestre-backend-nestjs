@@ -7,21 +7,23 @@ import Navbar from "./componentes/Navbar";
 import Contact from "./componentes/Contact";
 import NotFound from './componentes/NotFound';
 
+
 function App() {
   return (
     <div className="container px-3">
       <Navbar />
       <Routes>
-      <Route path="/coments" element={<Coments />} />
+        <Route path="/coments" element={<Coments />} />
         <Route path="/coments" element={<Coments />} />
         <Route path="/recipes" element={<Recipe />} />
         <Route path="/users" element={<Users />} />
         <Route exact path="/" element={<Article />} />
-        <Route  path='/contact'element = {<Contact/>}/>
-        <Route path="*" element={<NotFound />}/>
+        <Route  path='/contact' element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </div> 
+    </div>
   );
 }
 
 export default App;
+
