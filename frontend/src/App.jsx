@@ -1,10 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import Article from "./componentes/Article";
-import Coments from "./componentes/Coments";
-import Recipe from "./componentes/Recipe";
+import Article from "./componentes/article";
+import Coments from "./componentes/coments";
+import Recipe from "./componentes/recipe";
 import Users from "./componentes/Users";
 import Navbar from "./componentes/Navbar";
-
 import Contact from "./componentes/Contact";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
         <Route path="/users" element={<Users />} />
         <Route exact path="/" element={<Article />} />
         <Route  path='/contact'element = {<Contact/>}/>
-        
       </Routes>
     </div> 
   );
