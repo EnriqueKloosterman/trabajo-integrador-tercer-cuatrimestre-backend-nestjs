@@ -10,7 +10,7 @@ import NotFound from './componentes/NotFound';
 
 function App() {
   return (
-    <div className="container px-3">
+    <div className="container px-3 bg-slate-100">
       <Navbar />
       <Routes>
         <Route path="/coments" element={<Coments />} />

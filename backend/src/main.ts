@@ -9,7 +9,7 @@ async function bootstrap() {
   app.setGlobalPrefix("api/v1");
   app.useGlobalPipes(new ValidationPipe());
   const config = new DocumentBuilder()
-    .setTitle('Mucha Hambre!!')
+    .setTitle('Mi blog de cocina')
     .setDescription('Todo sobre cocina.')
     .setVersion('1.0')
     .build();
