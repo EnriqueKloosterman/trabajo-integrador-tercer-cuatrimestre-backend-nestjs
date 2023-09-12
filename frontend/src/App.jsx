@@ -5,6 +5,7 @@ import Recipe from "./componentes/recipe";
 import Users from "./componentes/Users";
 import Navbar from "./componentes/Navbar";
 import Contact from "./componentes/Contact";
+import NotFound from './componentes/NotFound';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/users" element={<Users />} />
         <Route exact path="/" element={<Article />} />
         <Route  path='/contact'element = {<Contact/>}/>
+        <Route path="*" element={<NotFound />}/>
       </Routes>
     </div> 
   );
