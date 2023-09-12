@@ -6,17 +6,14 @@ function Navbar() {
       <nav className="container mx-auto flex justify-between items-center px-4">
         <Link to="/" className="text-4xl font-extrabold text-white text-opacity-90 hover:text-opacity-100 transition-colors duration-300">Mi Blog de Cocina</Link>
         <ul className="flex space-x-6 text-lg font-semibold text-white">
-          <li className="relative group">
-            <Link to="/" className="hover:text-lime-400">Inicio</Link>
-            <div className="absolute w-0.5 h-6 bg-white group-hover:w-8 transition-all duration-300 origin-left"></div>
+          <li>
+            <Link to="/" className="hover:text-violet-400">Inicio</Link>
           </li>
-          <li className="relative group">
-            <Link to="/recipes" className="hover:text-lime-400">Recetas</Link>
-            <div className="absolute w-0.5 h-6 bg-white group-hover:w-8 transition-all duration-300 origin-left"></div>
+          <li>
+            <Link to="/recipes" className="hover:text-violet-400">Recetas</Link>
           </li>
-          <li className="relative group">
-            <Link to="/contact" className="hover:text-lime-400">Contacto</Link>
-            <div className="absolute w-0.5 h-6 bg-white group-hover:w-8 transition-all duration-300 origin-left"></div>
+          <li>
+            <Link to="/contact" className="hover:text-violet-400">Contacto</Link>
           </li>
         </ul>
       </nav>
@@ -25,5 +22,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
