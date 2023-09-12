@@ -28,14 +28,14 @@ function Article() {
       <div className="mb-4 flex items-center">
         <input
           type="text"
-          placeholder="Buscar recetas..."
+          placeholder="Buscar articulos..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full px-4 py-2 border rounded-l-lg focus:outline-none focus:border-lime-500"
         />
         <button
           onClick={() => setSearchTerm("")}
-          className="py-2 px-4 bg-lime-500 text-white rounded-r-lg hover:bg-lime-600 transition-colors duration-300"
+          className="py-2 px-4 bg-lime-500 border border-lime-500 text-white rounded-r-lg hover:bg-lime-600 transition-colors duration-300"
         >
           Limpiar
         </button>
@@ -46,8 +46,8 @@ function Article() {
             <img src={article.img} alt={article.title} className="w-full h-48 object-cover" />
             <div className="p-4">
               <h2 className="text-2xl font-semibold text-gray-900 mb-2">{article.title}</h2>
-              <ul className="list-disc pl-6">
-                {article.article.map((paragraph, j) => (
+              <ul className="pl-6">
+                {article.article.slice(0, 1).map((paragraph, j) => (
                   <li key={j} className="text-gray-700 text-base mb-2">{paragraph}</li>
                 ))}
               </ul>
