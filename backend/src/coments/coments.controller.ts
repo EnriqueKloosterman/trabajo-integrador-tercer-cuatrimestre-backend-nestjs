@@ -88,8 +88,12 @@ async getComentsById(
     @Res() res: Response,
   ): Promise<any> {
     try {
-      await this.comentsService.updateComents(id, body);
-      return res.sendStatus(HttpStatus.NO_CONTENT);
+      const serviceResponse = await this.comentsService.updateComents(id, body);
+      if(serviceResponse){
+        return res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+      }else{
+        throw new BadRequestException(`Coment with id ${id} not found.`);
+      }
     } catch (error) {
       throw new BadRequestException(`Coment with id ${id} not found.`);
     }

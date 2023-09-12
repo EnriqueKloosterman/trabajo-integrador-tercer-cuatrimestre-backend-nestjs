@@ -45,11 +45,8 @@ export class ComentsService {
     updatedComents: CreateComentsDto,
   ): Promise<any> {
     const existingComents = await this.getComentsById(id);
-    if (!existingComents) {
-      return null;
-    }
-
-    const comentsToUpdate = { id, ...updatedComents };
+    if(!Object.keys(existingComents).length) return;
+    const comentsToUpdate = { id, ...existingComents, ...updatedComents };
     comentsToUpdate.updatedAt = new Date();
     await fetch(`${comentsURL}${id}`, {
       method: 'PUT',

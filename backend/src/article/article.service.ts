@@ -43,11 +43,9 @@ export class ArticleService {
 
   async updateArticle(id: number, updatedArticle: CreateArticleDto): Promise<any> {
     const existingArticle = await this.getArticleById(id);
-    if (!existingArticle) {
-      return null;
-    }
+    if (!Object.keys(existingArticle).length) return;
     
-    const articleToUpdate = { id, ...updatedArticle };
+    const articleToUpdate = { id, ...existingArticle, ...updatedArticle };
     articleToUpdate.updatedAt = new Date();
     await fetch(`${articleURL}${id}`, {
       method: 'PUT',

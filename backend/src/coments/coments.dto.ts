@@ -3,7 +3,6 @@ import {
   IsString,
   IsNotEmpty,
   IsNumber,
-  IsInt,
 } from 'class-validator';
 
 export class CreateComentsDto {
@@ -14,7 +13,7 @@ export class CreateComentsDto {
 
   @Expose()
   @IsNotEmpty()
-  @IsInt()
+  @IsNumber()
   user_id: number;
 
   @Expose()

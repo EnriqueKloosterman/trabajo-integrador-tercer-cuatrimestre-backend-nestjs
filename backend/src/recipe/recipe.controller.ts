@@ -60,7 +60,7 @@ async getRecipeById(
       const serviceResponse = await this.recipeService.createRecipe(recipe);
       await res.status(HttpStatus.CREATED).send(serviceResponse);
     } catch (error) {
-      throw new BadRequestException('Recipe creatioj failed');
+      throw new BadRequestException('Recipe creation failed');
     }
   }
   @Delete('/:id')
@@ -73,7 +73,7 @@ async getRecipeById(
       const serviceResponse = await this.recipeService.deleteRecipe(id);
       res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
     } catch (error) {
-      throw new BadRequestException('Recipe deletion failed');
+      throw new BadRequestException(`Recipe with id ${id} not found.`);
     }
   }
   @Put('/:id')
@@ -85,9 +85,13 @@ async getRecipeById(
   ): Promise<any> {
     try {
       const serviceResponse = await this.recipeService.updateRecipe(id, recipe);
-      res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+      if(serviceResponse){
+        res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+      }else{
+        throw new BadRequestException(`Recipe with id ${id} not found.`);
+      }
     } catch (error) {
-      throw new BadRequestException('Recipe update failed');
+      throw new BadRequestException(`Recipe with id ${id} not found.`);
     }
   }
 }

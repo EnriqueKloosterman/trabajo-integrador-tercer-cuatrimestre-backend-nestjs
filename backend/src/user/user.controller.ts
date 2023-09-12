@@ -81,7 +81,11 @@ export class UserController {
   ): Promise<any> {
     try {
       const serviceResponse = await this.userService.updateUser(id, user);
-      return res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+      if(serviceResponse){
+        return res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
+      }else{
+        throw new BadRequestException(`User with id ${id} not found`);
+      }
     } catch (error) {
       throw new BadRequestException(`User with id ${id} not found`);
     }

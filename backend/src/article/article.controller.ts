@@ -82,8 +82,11 @@ export class ArticleController {
     @Res() res: Response,
   ): Promise<any> {
     try {
-      await this.articleService.updateArticle(id, article);
-      return res.sendStatus(HttpStatus.NO_CONTENT);
+      const serviceResponse =  await this.articleService.updateArticle(id, article);
+      if(!serviceResponse){
+        throw new BadRequestException(`Article with id ${id} not found.`);
+      }
+      return res.status(HttpStatus.NO_CONTENT).send(serviceResponse);
     } catch (error) {
       throw new BadRequestException(`Article with id ${id} not found.`);
     }
