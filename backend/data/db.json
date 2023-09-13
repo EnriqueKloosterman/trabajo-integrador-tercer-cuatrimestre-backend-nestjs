@@ -122,7 +122,7 @@
     {
       "id": 1,
       "title": "Lomo al pepe",
-      "recipe": [
+      "description": [
         "Pon una cazuela con agua a fuego medio y, cuando esté hirviendo, añade los macarrones y cocínalos hasta que estén un poco al dente, ya que luego se calentarán con la carne. Cuando estén cocidos escúrrelos y resérvalos.",
         "Corta la carne en rodajas de 1 cm de grosor y salpimienta al gusto. Puedes hacer esta receta de lomo al pepe con lomo o con solomillo si lo prefieres.",
         "Pon una sartén amplia al fuego con las cuatro cucharadas de aceite de oliva. Cuando esté caliente, añade los trozos de carne, dóralos a fuego fuerte, sácalos y resérvalos.",
@@ -153,7 +153,7 @@
     {
       "id": 2,
       "title": "Super Pancho",
-      "recipe": [
+      "description": [
         "Poner a calentar Agua y poner las salchichas",
         "Cortar el pan de viena al medio",
         "Colocar las salchichas en el pan colocar adornando mayonesa y jamón"
@@ -168,6 +168,71 @@
       "userId": 1,
       "createdAt": "25/08/2023",
       "updatedAt": "2023-09-11T14:03:47.035Z"
+    },
+    {
+      "id": 3,
+      "title": "Sandwich de queso fundido",
+      "description": [
+        "Unta mantequilla en las partes exteriores de tus trozos de pan (las partes que van a tocar la sartén).",
+        "Dentro del sandwich pon entre 1-4 trozos o lonchas de queso (dependiendo de tus gustos). Recomiendo una mezcla de quesos diferentes para que quede aún más cremoso! También añade aquí tus otros ingredientes (como tomate, pimientos asados, bacon frito, etc.)",
+        "En una sartén precalentada a una temperatura media-baja pon el sandwich por un lado y cúbrelo con otra plato-bol que pese. Cocínalo lentamente (asegurando que no se queme) y cuando esté bien dorado dale la vuelta. Estará hecho cuando los dos lados queden bien dorados y el queso esté derretido y sobresaliendo un poco."
+      ],
+      "ingredients": [
+        "Pan lactal",
+        "Manteca",
+        "Queso"
+      ],
+      "img": "https://recetasamericanas.com/wp-content/uploads/2011/12/3407778423_f056f6e9ee_o.jpg",
+      "userId": 1,
+      "createdAt": "2023-09-13T21:10:28.926Z",
+      "updatedAt": "2023-09-13T21:10:28.926Z"
+    },
+    {
+      "id": 4,
+      "title": "Mini pizzas de jamón, rúcula y mozzarella",
+      "description": [
+        "Precalentar el horno a 180 ºC. Extender la masa de pizza en una superficie enharinada y cortar pequeñas porciones con un molde redondo.",
+        "Lavar y escurrir las hojas de rúcula. Cortar en trozos el jamón y picar el orégano finamente. Preparar la mozzarella.",
+        "Disponer una cucharadita de salsa de tomate sobre cada porción de masa. Cubrir con una hoja de rúcula, el jamón y la mozzarella rallada. Espolvorear con orégano seco y hornear durante cinco minutos. Servir."
+      ],
+      "ingredients": [
+        "250g masa de pizza",
+        "50g rúcula",
+        "100g jamón de parna",
+        "orégano",
+        "50g queso mozzarella"
+      ],
+      "img": "https://hips.hearstapps.com/hmg-prod/images/recetas-diezminutos-1655541818.jpg?crop=1xw:1xh;center,top&resize=980:*",
+      "userId": 1,
+      "createdAt": "2023-09-13T22:07:55.022Z",
+      "updatedAt": "2023-09-13T22:07:55.022Z"
+    },
+    {
+      "id": 5,
+      "title": "espaguetis con tomate",
+      "description": [
+        "Cocina los espaguetis en una olla grande con agua salada hirviendo. Sigue las instrucciones del paquete para saber el tiempo de cocción.",
+        "Mientras los espaguetis se están cocinando, calienta el aceite de oliva en una sartén grande.",
+        "Agrega el ajo picado y cocina a fuego medio hasta que esté dorado.",
+        "Agrega el tomate triturado a la sartén y cocina a fuego medio-bajo durante unos 10-15 minutos, hasta que quede una salsa espesa.",
+        "Si lo deseas puedes añadir albahaca fresca picada, que le da un sabor especial y delicioso. También puedes añadir otras especias como orégano o tomillo. Ve probando hasta que tengan el punto de sabor que tú deseas.",
+        "Una vez que los espaguetis estén cocidos, escúrrelos y añádelos a la sartén con la salsa de tomate.",
+        "Mezcla bien para que los espaguetis queden bien cubiertos con la salsa.",
+        "Sirve los espaguetis en platos y decora con hojas de albahaca fresca si lo deseas."
+      ],
+      "ingredients": [
+        " 500 g de espaguetis",
+        "1 lata de tomate triturado",
+        "2 dientes de ajo",
+        "",
+        "Aceite de oliva",
+        "Sal y pimienta al gusto",
+        "Hojas de albahaca fresca (opcional)"
+      ],
+      "img": "https://www.pequerecetas.com/wp-content/uploads/2023/03/espaguetis-con-tomate.jpg",
+      "userId": 1,
+      "createdAt": "2023-09-13T22:22:36.057Z",
+      "updatedAt": "2023-09-13T22:22:36.057Z"
     }
   ],
   "Coments": [

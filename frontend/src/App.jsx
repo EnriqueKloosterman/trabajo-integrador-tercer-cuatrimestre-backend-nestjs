@@ -6,7 +6,9 @@ import Users from "./componentes/Users";
 import Navbar from "./componentes/Navbar";
 import Contact from "./componentes/Contact";
 import NotFound from './componentes/NotFound';
-import RecipeForm from "./componentes/RecipeFrom";
+import CreateRecipe from './componentes/CreateRecipe';
+
+
 
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
     <div className="container px-3 bg-slate-100">
       <Navbar />
       <Routes>
-        <Route path="/recipeform" element={<RecipeForm/>} />
+        <Route path="/create-recipe" element={<CreateRecipe />} />
         <Route path="/coments" element={<Coments />} />
         <Route path="/coments" element={<Coments />} />
         <Route path="/recipes" element={<Recipe />} />

@@ -10,12 +10,12 @@ export class RecipeDto {
     @Expose()
     @IsNotEmpty()
     @IsArray()
-    description: string[];
+    description: [];
 
     @Expose()
     @IsNotEmpty()
     @IsArray()
-    ingredients: string[];
+    ingredients: [];
 
     @Expose()
     @IsNotEmpty()
