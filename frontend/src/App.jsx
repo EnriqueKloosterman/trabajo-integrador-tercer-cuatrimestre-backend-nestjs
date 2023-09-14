@@ -15,7 +15,7 @@ import ArticleDetail from "./componentes/ArticleDetail";
 
 function App() {
   return (
-    <div className="container px-3 bg-slate-100">
+    <div className="container px-3 bg-slate-100 mx-auto h-screen">
       <Navbar />
       <Routes>
         <Route path="/create-recipe" element={<CreateRecipe />} />
