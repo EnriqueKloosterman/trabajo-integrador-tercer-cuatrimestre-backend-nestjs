@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom"; 
 function Recipe() {
   const [recipes, setRecipes] = useState([]);
   const recipesUrl = "http://localhost:3000/api/v1/recipe";
@@ -21,22 +21,20 @@ function Recipe() {
             <img src={recipe.img} alt={recipe.title} className="w-full h-48 object-cover" />
             <div className="p-4">
               <h2 className="text-2xl font-semibold text-neutral-900 mb-2">{recipe.title}</h2>
-              {/* <p className="text-neutral-700 text-base mb-2">{recipe.description.slice(0, 1).join(" ")}...</p> */}
-              {/* <ul className="text-2xl font-semibold text-neutral-900 mb-2">
-                {recipe.description.slice(0, 1).map((paragraph, j) => (
-                  <li key={j} className="text-neutral-700 text-base mb-2">{paragraph}</li>
-                ))}
-              </ul> */}
-              {/* <h3 className="text-lg font-semibold text-neutral-900 mt-4">Ingredientes:</h3>
-              <ul className="list-disc pl-6">
-                {recipe.ingredients.map((ingredient, k) => (
-                  <li key={k} className="text-neutral-700 text-base mb-2">{ingredient}</li>
-                ))}
-              </ul> */}
             </div>
           </li>
         ))}
       </ul>
+      {/* Agregar un botón al final que redirija a create-recipe */}
+      <div className="text-center mt-8">
+        <Link to="/create-recipe">
+          <button
+            className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline-purple active:bg-purple-700"
+          >
+            Crear nueva receta
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }

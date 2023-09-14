@@ -233,6 +233,32 @@
       "userId": 1,
       "createdAt": "2023-09-13T22:22:36.057Z",
       "updatedAt": "2023-09-13T22:22:36.057Z"
+    },
+    {
+      "id": 6,
+      "title": "Pastel de papa",
+      "description": [
+        "Colocar los huevos en una olla pequeña y cocinarlos a fuego medio alto. Cocinarlos durante 5 minutos contados desde el momento en que empieza a hervir el agua. Retirar del fuego y reservar.",
+        " En una sartén se fríe la cebolla, la carne, el orégano, la sal y el merkén. Retirar del fuego cuando la carne esté dorada y la cebolla transparente, se incorporan las pasas y se reserva.",
+        "  Enseguida se prepara el puré. Se pelan las papas, se ponen en una olla y se cubren con agua, se agrega 1 cucharada de sal y se cocinan durante 20 a 30 minutos. Una vez que estén blandas se escurre el agua y se muelen agregando mantequilla, sal y la leche hasta obtener un puré espeso y se reserva.",
+        "Se ponen los platos en la bandeja del horno y se dejan gratinar. Para ello, espolvorear queso rallado y dejarlos unos minutos a 180 grados. También se les puede agregar azúcar granulada.",
+        ""
+      ],
+      "ingredients": [
+        "½ kg. de papas",
+        " ½ kg. de carne molida",
+        " 1 taza de leche",
+        " 50 gramos de mantequilla",
+        " 1 cebolla",
+        " 2 huevos",
+        " Aceitunas y pasas",
+        " Sal a gusto",
+        ""
+      ],
+      "img": "https://www.lanacion.com.ar/resizer/v2/64RCEDBW6VBB5PRK7PTUZBS3LU.jpg?auth=7a035444ff48c6eb57320c659ef658f7247086eb747f332b090242e5b8884fbd&width=880&height=586&quality=70&smart=true",
+      "userId": 1,
+      "createdAt": "2023-09-13T23:59:04.451Z",
+      "updatedAt": "2023-09-13T23:59:04.451Z"
     }
   ],
   "Coments": [
