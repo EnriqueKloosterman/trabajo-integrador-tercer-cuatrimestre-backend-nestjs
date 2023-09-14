@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Recipe() {
@@ -58,7 +58,6 @@ function Recipe() {
           </div>
         ))}
       </ul>
-      {/* Agregar un botón al final que redirija a create-recipe */}
       <div className="text-center mt-8">
         <Link to="/create-recipe">
           <button className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline-purple active:bg-purple-700">

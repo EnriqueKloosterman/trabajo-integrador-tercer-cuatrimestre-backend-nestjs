@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+
 
 const RecipeForm = () => {
   const [formData, setFormData] = useState({
@@ -39,6 +41,7 @@ const RecipeForm = () => {
           showConfirmButton: false,
           timer: 10000,
         });
+        Navigate('/recipes')
       } else {
         Swal.fire({
           icon: 'error',
@@ -50,6 +53,8 @@ const RecipeForm = () => {
       console.error('Error al crear la receta:', error);
     }
   };
+  
+  const Navigate = useNavigate();
 
   return (
     <div className="bg-gray-100 p-6 rounded-lg shadow-lg">

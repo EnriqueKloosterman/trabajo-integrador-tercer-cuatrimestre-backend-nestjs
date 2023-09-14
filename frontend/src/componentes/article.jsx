@@ -66,11 +66,19 @@ function Article() {
                 </div>
               </div>
             </Link>
-            `
+            
           </div>
         ))}
       </div>
+      <div className="text-center mt-8">
+        <Link to="/create-article">
+          <button className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline-purple active:bg-purple-700">
+            Crear nuevo Articulo
+          </button>
+        </Link>
+      </div>
     </div>
+    
   );
 }
 

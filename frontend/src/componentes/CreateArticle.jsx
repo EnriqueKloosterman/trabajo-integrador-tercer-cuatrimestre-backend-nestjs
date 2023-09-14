@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 function CreateArticle() {
@@ -8,6 +9,8 @@ function CreateArticle() {
     img: '',
     user_id: 1, // Usar mientras no haya inicio de sesión de usuarios
   });
+
+  const Navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,6 +40,7 @@ function CreateArticle() {
           showConfirmButton: false,
           timer: 7000,
         });
+        Navigate("/");      
       } else {
         Swal.fire({
           icon: "error",
