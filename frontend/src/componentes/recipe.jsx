@@ -32,7 +32,7 @@ function Recipe() {
       <div className="mb-4">
         <input
           type="text"
-          placeholder="Buscar recetas"
+          placeholder="Buscar recetas..."
           value={searchTerm}
           onChange={handleSearchChange}
           className="px-4 py-2 border border-gray-300 rounded-lg w-full"
