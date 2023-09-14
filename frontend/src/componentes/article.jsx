@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Article() {
   const [articles, setArticles] = useState([]);
@@ -40,21 +41,35 @@ function Article() {
           Limpiar
         </button>
       </div>
-      <ul className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {filteredArticles.map((article, i) => (
-          <li key={i} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src={article.img} alt={article.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h2 className="text-2xl font-semibold text-black mb-2">{article.title}</h2>
-              <ul className="pl-6">
-                {article.article.slice(0, 1).map((paragraph, j) => (
-                  <li key={j} className="text-black text-base mb-2">{paragraph}</li>
-                ))}
-              </ul>
-            </div>
-          </li>
+          <div
+            key={i}
+            className="bg-white shadow-lg rounded-lg overflow-hidden aricle-card"
+          >
+            <Link to={`/articles/${article.id}`}>
+              <img
+                src={article.img}
+                alt={article.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h2 className="text-2xl font-semibold text-black mb-2">
+                  {article.title}
+                </h2>
+                <div className="pl-6">
+                  {article.article.slice(0, 1).map((paragraph, j) => (
+                    <p key={j} className="text-black text-base mb-2">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </Link>
+            `
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

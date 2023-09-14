@@ -8,6 +8,7 @@ import Contact from "./componentes/Contact";
 import NotFound from './componentes/NotFound';
 import CreateRecipe from './componentes/CreateRecipe';
 import RecipeDetail from "./componentes/RecipeDetail";
+import ArticleDetail from "./componentes/ArticleDetail";
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="recipes/:id" element={<RecipeDetail />} />
         <Route path="/users" element={<Users />} />
         <Route exact path="/" element={<Article />} />
+        <Route path="/articles/:id" element={<ArticleDetail />} />
         <Route  path='/contact' element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
