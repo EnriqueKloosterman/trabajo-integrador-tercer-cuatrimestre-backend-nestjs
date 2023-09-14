@@ -14,11 +14,16 @@ function RecipeDetail() {
   }, [id]);
 
   if (!recipe) {
-    return <div>Cargando...</div>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-purple-600 border-solid"></div>
+      </div>
+    );
   }
 
   return (
     <div className="container mx-auto p-4">
+      {/* Renderiza los detalles de la receta aquí */}
       <h2 className="text-2xl font-semibold text-neutral-900 mb-2">
         {recipe.title}
       </h2>
@@ -31,6 +36,8 @@ function RecipeDetail() {
                 <li key={i} className="text-black text-base mb-2">{ingredient}</li>
             ))}
         </ul>
+
+      {/* Otros detalles de la receta */}
       <div className="text-center mt-8">
         <Link to="/recipes">
           <button className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline-purple active:bg-purple-700">
