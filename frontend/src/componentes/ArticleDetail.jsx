@@ -29,7 +29,7 @@ function ArticleDetail() {
                   <div className="text-center mt-8">
         <Link to="/">
           <button className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline-purple active:bg-purple-700">
-            Volver a recetas
+            Volver 
           </button>
         </Link>
       </div>
